@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :interest, through: :user_interests
 
   # validates :user_name, presence: true, uniqueness: true
-  validates :email, format: { with: /\A.*@.*\.com\z/ }
+  validates :email, format: { with: /\A.*@.*\..+\z/ }
 end
