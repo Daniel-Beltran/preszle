@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :user_interests
   has_many :interest, through: :user_interests
 
-  validates :user_name, presence: true, uniqueness: true
+  # validates :user_name, presence: true, uniqueness: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }
 end
