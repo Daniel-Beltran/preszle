@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+.banner {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(asset_path('vincent-nicolas-hMuygRVm4_8-unsplash.jpg'));
+  background-position: center;
+  vertical-align: middle;
+  border: 2px;
+  object-fit: fill;
+  margin: 5px 5px 5px 5px;;
+  background-size: cover;
+  box-shadow: 0 10px 15px rgba(0 , 0 , 0 , 0.1);
+  justify-content: center;
+  text-decoration: center;
+  &:hover {
+    text-decoration: none;
+  }
+}
