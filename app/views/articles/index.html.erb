@@ -1,3 +1,5 @@
- <% @x.each do |n| %>
-<h2><%= n.title %></h2>
+<% @x.each do |n| %>
+  <% if n != 2%>
+  <h2><%= n.title %></h2>
+  <% end %>
 <% end %>
