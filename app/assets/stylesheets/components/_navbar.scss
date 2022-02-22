@@ -2,12 +2,26 @@
   background-color: $pr-dark;
   height: 40px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  .brand {
+}
+
+.brand {
+  color: $pr-yellow;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Libre Baskerville', serif;
+  margin: 8px;
+}
+
+.navbar-icons {
+  color: $pr-white;
+  font-size: 20px;
+  margin: 8px;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  i:hover {
     color: $pr-yellow;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: 'Libre Baskerville', serif;
-    margin: 20px 10px;
   }
 }
