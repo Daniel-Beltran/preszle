@@ -1,9 +1,12 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 // Define fonts for body and headers
-$body-font: 'Poppins', sans-serif;
-$headers-font: 'Libre Baskerville', serif;
+$body-font: 'Libre Baskerville', serif;
+$headers-font: "Poppins", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
