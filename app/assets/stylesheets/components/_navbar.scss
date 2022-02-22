@@ -1,12 +1,13 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-pr {
+  background-color: $pr-dark;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  .brand {
+    color: $pr-yellow;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Libre Baskerville', serif;
+    margin: 20px 10px;
+  }
 }
