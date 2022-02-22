@@ -1,1 +1,7 @@
 <%= render 'shared/navbar' %>
+
+<% @x.each do |n| %>
+  <h2><%= n.title %></h2>
+  <p><%= n.description %></p>
+  <a><%= n.url %></a>
+<% end %>
