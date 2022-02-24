@@ -2,6 +2,6 @@
 
 <% @news.each do |n| %>
   <h2><%= n.title %></h2>
-  <p><%= n.content %></p>
+  <p><%= n.description %></p>
   <%= link_to n.source_url, n.source_url%>
 <% end %>

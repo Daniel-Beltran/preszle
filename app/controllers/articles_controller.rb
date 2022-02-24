@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     @three_articles = @api_news.get_everything(q: "bitcoin", searchIn: "title",
                                                from: "2022-01-25&to=2022-02-22", sortBy: "popularity", pageSize: 3)
     @three_articles.each do |n|
-      @news << (Article.create title: n.title, source_url: n.url)
+      @news << (Article.create title: n.title, description: n.description, source_url: n.url)
     end
   end
 end
