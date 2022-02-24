@@ -12,17 +12,25 @@
   font-weight: 600;
   font-family: 'Libre Baskerville', serif;
   margin: 8px;
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
 }
 
 .navbar-icons {
-  color: $pr-white;
   font-size: 20px;
   margin: 8px;
   width: 40vw;
   display: flex;
   justify-content: space-between;
-  i:active,
-  i:hover {
+  a {
+    color: $pr-white;
+  }
+
+  a:hover,
+  a:active {
     color: $pr-yellow;
+    text-decoration: none;
   }
 }

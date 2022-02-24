@@ -9,7 +9,10 @@
     <div class="bottom-landing">
       <p > The news at your fingertips, <br>
       served in pretzel sized portions </p>
-      <%# <button>Start</button> %>
-    <%= link_to "Start", new_user_session_path %>
+      <% if current_user %>
+        <%= link_to 'Start', articles_path %>
+      <% else %>
+        <%= link_to "Start", new_user_session_path %>
+      <% end %>
     </div>
  </div>
