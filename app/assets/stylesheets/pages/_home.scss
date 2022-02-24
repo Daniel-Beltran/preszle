@@ -1,15 +1,127 @@
 // Specific CSS for your home-page
-.banner {
+
+ .container-landing
+ {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
+}
+
+.container-logo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-landing{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}µ
+
+.bottom-landing p{
+  color: $pr-white;
+  font-size: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align:center;
+  // margin-right: 60px;
+
+}
+
+.bottom-landing a{
+  color: $pr-dark;
+  width: 208px;
+  height: 39px;
+  background-color: $pr-yellow;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: .4rem;
+}
+
+.banner {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0 ;
+  left: 0;
+  filter:brightness(70%);
+  // opacity: .9;
+  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2)), url('vincent-nicolas-hMuygRVm4_8-unsplash.jpg');
+
   background-image: url(asset_path('vincent-nicolas-hMuygRVm4_8-unsplash.jpg'));
-  background-position: center;
+
+  // overflow: hidden;
   vertical-align: middle;
   object-fit: fill;
   background-size: cover;
   box-shadow: 0 10px 15px rgba(0 , 0 , 0 , 0.1);
   justify-content: center;
+
   text-decoration: center;
   &:hover {
     text-decoration: none;
   }
 }
+
+
+@media (min-width:989px) and (min-height:640){
+.container-landing{
+      height: 640px;
+      // overflow: hidden;
+    }
+
+    .container-logo{
+      padding-top: 20px;
+      // margin-right: 50px;
+      // padding-right: 50 !important;
+    }
+
+    .bottom-landing{
+      padding-bottom: 30px;
+
+    }
+    .bottom-landing a{
+      color: $pr-dark;
+      width: 208px;
+      height: 39px;
+      background-color: $pr-yellow;
+      border: none;
+      outline: none;
+      border-radius: 3px;
+      text-align: center;
+      padding-top: .4rem;
+      padding-bottom: 2px;
+    }
+
+    .bottom-landing p{
+      color: $pr-white;
+      font-size: 12px;
+      padding-right: 15px;
+      padding-left: 15px;
+      text-align:center;
+      color: $pr-white;
+      // margin-right: 60px;
+
+    }
+    .banner {
+      background-position: left -50px top 0px ;
+    }
+}
+
+
+// @media screen and (min-width:345px)
+//  {
+//   @media screen and (min-height:640px)
+//   {
+
+
+//   }
+// }
