@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-}µ
+}
 
 .bottom-landing p{
   color: $pr-white;
@@ -98,7 +98,7 @@
       border-radius: 3px;
       text-align: center;
       padding-top: .4rem;
-      padding-bottom: 2px;
+      padding-bottom: 50px;
     }
 
     .bottom-landing p{
@@ -106,8 +106,9 @@
       font-size: 12px;
       padding-right: 15px;
       padding-left: 15px;
-      text-align:center;
+      // text-align:center;
       color: $pr-white;
+      margin-top: 15px;
       // margin-right: 60px;
 
     }
@@ -115,13 +116,3 @@
       background-position: left -50px top 0px ;
     }
 }
-
-
-// @media screen and (min-width:345px)
-//  {
-//   @media screen and (min-height:640px)
-//   {
-
-
-//   }
-// }
