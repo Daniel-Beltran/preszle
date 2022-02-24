@@ -33,7 +33,8 @@ gem 'devise'
 gem 'faker'
 
 gem 'autoprefixer-rails', '10.2.5'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.15.1'
+# gem "font-awesome-rails"
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

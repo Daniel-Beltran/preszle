@@ -250,7 +250,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
-  font-awesome-sass
+  font-awesome-sass (~> 5.15.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   news-api
@@ -275,4 +275,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.28
+   2.2.32

@@ -1,12 +1,28 @@
-.navbar-lewagon {
+.navbar-pr {
+  background-color: $pr-dark;
+  height: 40px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.brand {
+  color: $pr-yellow;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Libre Baskerville', serif;
+  margin: 8px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-icons {
+  color: $pr-white;
+  font-size: 20px;
+  margin: 8px;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  i:active,
+  i:hover {
+    color: $pr-yellow;
+  }
 }
