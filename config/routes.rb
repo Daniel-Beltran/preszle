@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create]
   end
   resources :lists, only: %i[index new create show]
-  resources :user_interests, only: %i[new create ]
+  resources :user_interests, only: %i[new create index]
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get '/my_interests', to: 'user_interests#index', as: 'my_interests'
   post '/my_interests', to: 'user_interests#update', as: 'update_interests'

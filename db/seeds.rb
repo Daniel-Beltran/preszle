@@ -14,13 +14,15 @@ User.destroy_all
 Review.destroy_all
 Bookmark.destroy_all
 Article.destroy_all
+UserInterest.destroy_all
+Article.destroy_all
 
 puts 'creating users'
 
-user_names = Faker::Name.unique.name  
+user_names = Faker::Name.unique.name
 
 (0...10).each do
-  user_name = Faker::Name.unique.name  
+  user_name = Faker::Name.unique.name
   domains = %w[gbites.com hotzels.be wahoo.be]
   user = User.create!(user_name: user_name,
                       email: "#{user_name.split.join('.')}@#{domains.sample}",
