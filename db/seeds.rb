@@ -38,19 +38,19 @@ interests.each { |interest| Interest.create!(name:interest)}
 puts 'creating lists'
 
 lists = ["Metro reading", "Impress the boss", "Toilet brake"]
-lists.each do |list|
-  List.create!(name: list,
-              user_id: User.all)
+User.all.each do |user|
+  lists.each do |list|
+    List.create!(name: list,
+                user_id: user.id) 
+  end
 end
 
-(0...10).each do
+
+puts 'creating User_Interest'
+
+(0...10).each do 
   UserInterest.create!(user_id: User.all.sample[:id],
                         interest_id: Interest.all.sample[:id])
 end
 
-puts "creating 3 articles"
 
-articles = ["The First Article", "The Second Article", "The Third Article"]
-articles.each do |article|
-  Article.create!(title: article, description: "Here is supposed to be some description about the articles", url: "https://en.wikipedia.org/wiki/Pretzel", image: "app/assets/images/article.jpg"  )
-end
