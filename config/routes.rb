@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   get '/my_interests', to: 'user_interests#index', as: 'my_interests'
   post '/my_interests', to: 'user_interests#update', as: 'update_interests'
   get '/user_interest/new', to: 'user_interests#new', as: 'my_interests_new'
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
