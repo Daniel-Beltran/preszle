@@ -14,13 +14,15 @@ User.destroy_all
 Review.destroy_all
 Bookmark.destroy_all
 Article.destroy_all
+UserInterest.destroy_all
+Article.destroy_all
 
 puts 'creating users'
 
-user_names = Faker::Name.unique.name  
+user_names = Faker::Name.unique.name
 
 (0...10).each do
-  user_name = Faker::Name.unique.name  
+  user_name = Faker::Name.unique.name
   domains = %w[gbites.com hotzels.be wahoo.be]
   user = User.create!(user_name: user_name,
                       email: "#{user_name.split.join('.')}@#{domains.sample}",
@@ -38,12 +40,17 @@ puts 'creating lists'
 lists = ["Metro reading", "Impress the boss", "Toilet brake"]
 lists.each do |list|
   List.create!(name: list,
-              user_id: User.all) 
+              user_id: User.all)
 end
 
-(0...10).each do 
+(0...10).each do
   UserInterest.create!(user_id: User.all.sample[:id],
                         interest_id: Interest.all.sample[:id])
 end
 
+puts "creating 3 articles"
 
+articles = ["The First Article", "The Second Article", "The Third Article"]
+articles.each do |article|
+  Article.create!(title: article, description: "Here is supposed to be some description about the articles", url: "https://en.wikipedia.org/wiki/Pretzel", image: "app/assets/images/article.jpg"  )
+end
