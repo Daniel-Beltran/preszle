@@ -1,13 +1,14 @@
 <p></p>
 
-<% @current_user_interest.each do |i|%>
-<%=  check_box_tag 'interest_ids[]', i.id %>
-         <%= i.name %>
-<%end%>
 
 
-<%=simple_form_for @user_interest do |f|%>
-  <% if @current_user_interest.interest_id %>
-<%=f.input :interest, as: :check_boxes, collection: @current_user_interest ,input_html: {multiple:true, checked: true}%>
-<%=f.submit :save, class: "btn btn-primary"%>
-<%end%>
+<%=simple_form_for(UserInterest.new, url: user_interests_path, method: :post) do |f|%>
+  <% @interests.each do |interest|%>
+    <%if @user_interests.include?(interest)%>
+      <%=f.input :interest, as: :check_boxes, legend_tag: false, collection: @interests, input_html: {multiple:true, checked: true}%>
+    <%else%>  
+      <%=f.input :interest, as: :check_boxes, legend_tag: false, collection: @interests, input_html: {multiple:true}%>
+    <%end%>
+  <%end%>
+  <%=f.submit :save, class: "btn btn-primary"%>
+<%end%>     
