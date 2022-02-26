@@ -36,10 +36,15 @@ interests.each { |interest| Interest.create!(name:interest)}
 puts 'creating lists'
 
 lists = ["Metro reading", "Impress the boss", "Toilet brake"]
-lists.each do |list|
-  List.create!(name: list,
-              user_id: User.all) 
+User.all.each do |user|
+  lists.each do |list|
+    List.create!(name: list,
+                user_id: user.id) 
+  end
 end
+
+
+puts 'creating User_Interest'
 
 (0...10).each do 
   UserInterest.create!(user_id: User.all.sample[:id],

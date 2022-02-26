@@ -1,13 +1,21 @@
 class UserInterestsController < ApplicationController
 
+  def index 
+    @current_user_interest = current_user.interests
+    @user_interest = UserInterest.new
+  end  
+
   def new 
     @user_interest = UserInterest.new
   end
 
 
   def create
-    @user_interest = UserInterest.new(user_interest_params)
-    @user_interest.user = current_user
+    interest_ids = params[:user_interest][:interest]
+    interest_ids.shift
+    interest_ids.each do |id|
+      current_user.interests << Interest.find(id)
+    end
   end  
  
 
