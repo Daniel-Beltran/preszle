@@ -1,11 +1,12 @@
-<%= render 'shared/navbar' %>
+<div id="article-container">
+  <%= render 'shared/navbar' %>
 
-<% @news.each do |n| %>
-  <div class="x05-main-page">
+  <% @news.each do |n| %>
     <div class="article-card">
       <h2><%= n.title %></h2>
       <p><%= n.description %></p>
+      <div class="article-image" style="background-image: url('<%= n.image %>')"></div>
       <%= link_to n.source_url, n.source_url%>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
