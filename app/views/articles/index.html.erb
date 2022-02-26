@@ -1,7 +1,11 @@
 <%= render 'shared/navbar' %>
 
 <% @news.each do |n| %>
-  <h2><%= n.title %></h2>
-  <p><%= n.description %></p>
-  <%= link_to n.source_url, n.source_url%>
+  <div class="x05-main-page">
+    <div class="article-card">
+      <h2><%= n.title %></h2>
+      <p><%= n.description %></p>
+      <%= link_to n.source_url, n.source_url%>
+    </div>
+  </div>
 <% end %>
