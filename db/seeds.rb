@@ -47,10 +47,3 @@ end
   UserInterest.create!(user_id: User.all.sample[:id],
                         interest_id: Interest.all.sample[:id])
 end
-
-puts "creating 3 articles"
-
-articles = ["The First Article", "The Second Article", "The Third Article"]
-articles.each do |article|
-  Article.create!(title: article, description: "Here is supposed to be some description about the articles", url: "https://en.wikipedia.org/wiki/Pretzel", image: "app/assets/images/article.jpg"  )
-end
