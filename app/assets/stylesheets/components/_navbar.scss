@@ -22,7 +22,6 @@
   font-weight: 600;
   font-family: 'Libre Baskerville', serif;
   margin: 8px;
-  a:hover,
   a:active {
     text-decoration: none;
   }
@@ -34,10 +33,9 @@
   width: 40vw;
   display: flex;
   justify-content: space-between;
-  a {
+  i {
     color: $pr-white;
   }
-  a:hover,
   a:active {
     color: $pr-yellow;
     text-decoration: none;

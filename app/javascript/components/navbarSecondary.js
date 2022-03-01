@@ -1,4 +1,4 @@
-const toggleReadTimeSecondaryNavbar = () => {
+const toggleSecondaryNavbar = () => {
   const readtime = document.querySelector('#readtime');
   const interests = document.querySelector('#interests');
   const readlists = document.querySelector('#readlists');
@@ -7,12 +7,17 @@ const toggleReadTimeSecondaryNavbar = () => {
 
   readtime.addEventListener('click', () => {
     console.log('readtime');
+    navbarSecondary.classList.toggle('d-none');
+    readtime.classList.toggle('text-info');
   });
   interests.addEventListener('click', () => {
     console.log('interests');
+    navbarSecondary.classList.toggle('d-none');
+    interests.classList.toggle('text-info');
   });
   readlists.addEventListener('click', () => {
     console.log('readlists');
+    interests.classList.toggle('text-info');
   });
   dashboard.addEventListener('click', () => {
     console.log('dashboard');
@@ -21,4 +26,4 @@ const toggleReadTimeSecondaryNavbar = () => {
   });
 }
 
-export { toggleReadTimeSecondaryNavbar };
+export { toggleSecondaryNavbar };
