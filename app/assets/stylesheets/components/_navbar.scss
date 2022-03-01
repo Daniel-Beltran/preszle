@@ -1,6 +1,7 @@
 .nav-container {
   display: flex;
   flex-direction: column;
+  width: 100vw;
 }
 
 .navbar-pr {
@@ -14,6 +15,16 @@
 .navbar-sec {
   background-color: $pr-blue;
   height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.rt-nav {
+  justify-content: space-between;
+}
+
+.int-nav {
+  justify-content: space-between;
 }
 
 .brand {

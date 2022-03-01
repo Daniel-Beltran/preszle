@@ -1,0 +1,34 @@
+input[type=range]{
+    -webkit-appearance: none;
+    width: 50vw;
+    background: transparent;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: $pr-yellow;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 24px;
+  border-radius: 12px;
+  background: $pr-white;
+}
+input[type=range]::-ms-fill-lower {
+  background: $pr-dark;
+  border: none;
+  border-radius: 12px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: $pr-dark;
+}

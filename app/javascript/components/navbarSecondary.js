@@ -3,26 +3,40 @@ const toggleSecondaryNavbar = () => {
   const interests = document.querySelector('#interests');
   const readlists = document.querySelector('#readlists');
   const dashboard = document.querySelector('#dashboard');
-  const navbarSecondary = document.querySelector('#navbar-secondary')
+  const readtimeNavbar = document.querySelector('#readtime-navbar')
+  const interestsNavbar = document.querySelector('#interests-navbar')
 
   readtime.addEventListener('click', () => {
-    console.log('readtime');
-    navbarSecondary.classList.toggle('d-none');
+    readtimeNavbar.classList.toggle('d-none');
+    if (interests.classList.contains('text-info')) interests.classList.toggle ('text-info');
+    if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
+    if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
+    if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
     readtime.classList.toggle('text-info');
   });
   interests.addEventListener('click', () => {
-    console.log('interests');
-    navbarSecondary.classList.toggle('d-none');
+    if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
+    interestsNavbar.classList.toggle('d-none');
+    if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
+    if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
+    if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
     interests.classList.toggle('text-info');
   });
   readlists.addEventListener('click', () => {
-    console.log('readlists');
-    interests.classList.toggle('text-info');
+    if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
+    if (interests.classList.contains('text-info')) interests.classList.toggle('text-info');
+    readlists.classList.toggle('text-info');
+    if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
+    if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
   });
   dashboard.addEventListener('click', () => {
-    console.log('dashboard');
-    navbarSecondary.classList.toggle('d-none');
+    if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
+    if (interests.classList.contains('text-info')) interests.classList.toggle('text-info');
+    if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
     dashboard.classList.toggle('text-info');
+    if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
   });
 }
 
