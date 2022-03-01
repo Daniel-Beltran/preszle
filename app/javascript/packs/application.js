@@ -21,12 +21,12 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// Internal imports:
+import { toggleReadTimeSecondaryNavbar } from '../components/navbarSecondary';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  toggleReadTimeSecondaryNavbar();
 });
 
 import "controllers"
