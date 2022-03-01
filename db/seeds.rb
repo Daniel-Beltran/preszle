@@ -52,5 +52,3 @@ puts 'creating User_Interest'
   UserInterest.create!(user_id: User.all.sample[:id],
                         interest_id: Interest.all.sample[:id])
 end
-
-
