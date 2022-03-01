@@ -1,0 +1,19 @@
+.article-container {
+  position: absolute; //or relative
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.article-image {
+  //height: 250px;
+  //background-position: center;
+  background-size: cover;
+  height: 132px;
+  //left: 23px;
+  object-fit: cover;
+  position: absolute;
+  top: 216px;
+  width: 94px;
+}
