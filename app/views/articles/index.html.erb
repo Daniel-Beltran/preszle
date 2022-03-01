@@ -8,8 +8,7 @@
       <div class="article-image" style="background-image: url('<%= n.image %>')"></div>
       <p class="article-source"><%= n.source %></p>
       <p class="article-reading-time"><%= n.reading_time %>min</p>
-      <%= link_to '', n.source_url, class: 'card-link'  %>
+      <%= link_to '', article_path(n), class: 'card-link'  %>
     </div>
   <% end %>
 </div>
-<iframe src="https://www.vrt.be/vrtnws/en/2022/03/01/_a-hundred-municipalities-ready-to-accept-ukrainian-refugees/" title="description" id="IFRAME_ID"></iframe>

@@ -6,11 +6,12 @@
  }
 
  .article-card {
-  display: flex;
+  flex: auto;
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid #388697;
   width: 740px;
+  height: 200px;
   position: relative;
  }
 
@@ -73,10 +74,4 @@
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-#IFRAME_ID {
-  width: 100%!important;
-  height: 500px;
-  position: relative;
 }
