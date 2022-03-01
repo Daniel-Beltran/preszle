@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :lists
   has_many :user_interests
-  has_many :interest, through: :user_interests
+  has_many :interests, through: :user_interests
 
   # validates :user_name, presence: true, uniqueness: true
   validates :email, format: { with: /\A.*@.*\..+\z/ }

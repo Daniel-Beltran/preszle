@@ -1,3 +1,10 @@
+<<<<<<< HEAD
 <%=form_for [] do |f|%>
   <%=f.collection_check_boxes :options, [[true, 'Yes'], [false, 'No']], :first, :last%>
+=======
+<%=simple_form_for @user_interest do |f|%>
+<%=f.input :interest, as: :check_boxes, collection: Interest.all, input_html: {multiple:true}%>
+<%=f.submit :save, class: "btn btn-primary"%>
+>>>>>>> master
 <%end%>
+

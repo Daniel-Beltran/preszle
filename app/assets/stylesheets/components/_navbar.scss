@@ -1,9 +1,19 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar-pr {
   background-color: $pr-dark;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar-sec {
+  background-color: $pr-blue;
+  height: 40px;
 }
 
 .brand {
@@ -27,7 +37,6 @@
   a {
     color: $pr-white;
   }
-
   a:hover,
   a:active {
     color: $pr-yellow;
