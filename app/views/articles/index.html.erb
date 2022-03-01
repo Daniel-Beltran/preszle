@@ -1,12 +1,15 @@
-<div id="article-container">
-  <%= render 'shared/navbar' %>
 
+  <%= render 'shared/navbar' %>
+<div class="article-container">
   <% @news.each do |n| %>
     <div class="article-card">
-      <h2><%= n.title %></h2>
-      <p><%= n.description %></p>
+      <h2 class="article-title"><%= n.title %></h2>
+      <p class="article-description"><%= n.description %></p>
       <div class="article-image" style="background-image: url('<%= n.image %>')"></div>
-      <%= link_to n.source_url, n.source_url%>
+      <p class="article-source"><%= n.source %></p>
+      <p class="article-reading-time"><%= n.reading_time %>min</p>
+      <%= link_to '', n.source_url, class: 'card-link'  %>
     </div>
   <% end %>
 </div>
+<iframe src="https://www.vrt.be/vrtnws/en/2022/03/01/_a-hundred-municipalities-ready-to-accept-ukrainian-refugees/" title="description" id="IFRAME_ID"></iframe>
