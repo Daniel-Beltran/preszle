@@ -1,14 +1,13 @@
-<p></p>
-
-
-
-<%=simple_form_for(UserInterest.new, url: user_interests_path, method: :post) do |f|%>
+<h3>Choose your interests</h3>
+ 
+<div>
+<%= simple_form_for(UserInterest.new, url: user_interests_path, method: :post) do |f|%>
   <% @interests.each do |interest|%>
-    <%if @user_interests.include?(interest)%>
-      <%=f.input :interest, as: :check_boxes, legend_tag: false, collection: @interests, input_html: {multiple:true, checked: true}%>
-    <%else%>  
-      <%=f.input :interest, as: :check_boxes, legend_tag: false, collection: @interests, input_html: {multiple:true}%>
-    <%end%>
+  <ul class="list-unstyled">
+    <li><%= f.input :"#{interest.id}", as: :boolean, label: interest.name, legend_tag: false, input_html: { checked: @user_interests.include?(interest) ? true : false, value: interest.id }, class: "interest-button"%></li>
+  </ul>  
   <%end%>
+ </div> 
+
   <%=f.submit :save, class: "btn btn-primary"%>
-<%end%>     
+<%end%>
