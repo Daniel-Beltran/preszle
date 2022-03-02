@@ -1,11 +1,15 @@
-<h3>Choose your interests</h3>
-
-<%= simple_form_for(UserInterest.new, url: user_interests_path, method: :post) do |f|%>
-  <% @interests.each do |interest|%>
-    <ul class="list-unstyled">
-      <li class = "interest-button"><%= f.input :"#{interest.id}", as: :boolean, label: interest.name, legend_tag: false, input_html: { checked: @user_interests.include?(interest) ? true : false, value: interest.id }%></li>
-  </ul>  
-  <%end%>
-
-  <%=f.submit :update, class: "interest-update-button"%>
-<%end%>
+<div class = "interest-form-container">
+  <h1 class = "title2">Preszle</h1>
+  <h2 class = "subtitle2">Little salty News Snakcs</h2>  
+  <h2 class = "choose" >Choose your interests</h2>
+  <div class = "interest-form">
+    <%=simple_form_for(UserInterest.new, url: user_interests_path, method: :post) do |f|%>
+      <div class="interest-form-collection">
+      <% @interests.each do |interest|%>
+          <div class = "interest-button user_interest_<%="#{interest.id}"%>"<%= f.input :"#{interest.id}", as: :boolean, label: interest.name, legend_tag: false, input_html: { checked: @user_interests.include?(interest) ? true : false, value: interest.id }%></div> 
+      <%end%>
+      </div>
+  </div> 
+      <%=f.submit :save, class: "interest-update-button"%>
+    <%end%> 
+</div>

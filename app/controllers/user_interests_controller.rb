@@ -17,6 +17,7 @@ class UserInterestsController < ApplicationController
         current_user.interests << Interest.find(id.to_i)
       end  
     end
+    redirect_to articles_path
   end
 end
 
