@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 100vw;
 }
-
 .navbar-pr {
   background-color: $pr-dark;
   height: 40px;
@@ -11,33 +10,29 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .navbar-sec {
   background-color: $pr-blue;
   height: 40px;
   display: flex;
   align-items: center;
 }
-
 .rt-nav {
   justify-content: space-between;
 }
-
 .int-nav {
   justify-content: space-between;
 }
-
 .brand {
   color: $pr-yellow;
   font-size: 20px;
   font-weight: 600;
   font-family: 'Libre Baskerville', serif;
   margin: 8px;
+  a:hover,
   a:active {
     text-decoration: none;
   }
 }
-
 .navbar-icons {
   font-size: 20px;
   margin: 8px;
@@ -51,4 +46,10 @@
     color: $pr-yellow;
     text-decoration: none;
   }
+}
+.text-block {
+  width: 80px;
+  color: $pr-white;
+  font-size: medium;
+  margin: 0 8px;
 }

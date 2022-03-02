@@ -9,9 +9,11 @@
     </div>
   </div>
   <div class="navbar-sec rt-nav d-none" id="readtime-navbar">
-    <div>Readtime</div>
-    <input type="range" class="form-range" id="exampleRangeMood" required>
-    <div>minutes</div>
+    <div class="text-block">Readtime</div>
+    <div class="slider-container">
+      <input type="range" class="slider" id="slider" min="0" max="30">
+    </div>
+    <div class="text-block"><span id="value"></span> min</div>
   </div>
   <div class="navbar-sec int-nav d-none" id="interests-navbar">
     <p>Interests</p>

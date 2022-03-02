@@ -23,10 +23,12 @@ import "bootstrap";
 
 // Internal imports:
 import { toggleSecondaryNavbar } from '../components/navbarSecondary';
+import { sliderValue } from '../components/sliderValue';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   toggleSecondaryNavbar();
+  sliderValue();
 });
 
 import "controllers"
