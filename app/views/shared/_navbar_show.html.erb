@@ -1,0 +1,17 @@
+<div class="nav-container">
+  <div class="navbar-pr">
+    <%= link_to 'Preszle', articles_path, class: 'brand' %>
+    <div class="navbar-icons">
+      <%= link_to '', dashboard_path, class: 'fa-regular fa-clock', id: 'readtime' %>
+      <%= link_to '', dashboard_path, class: 'fa-solid fa-binoculars', id: 'interests' %>
+      <%= link_to '', dashboard_path, class: 'fa-solid fa-list', id: 'readlists' %>
+      <%= link_to '', dashboard_path, class: 'fa-solid fa-user-pen', id: 'dashboard' %>
+    </div>
+  </div>
+  <div class="navbar-sec" id="navbar-secondary">
+    <div class="second-navbar-icons">
+      <%= link_to '', articles_path, class: 'fa-solid fa-arrow-left', id: 'back' %>
+      <%= link_to '', dashboard_path, class: 'fa-solid fa-heart', id: 'save' %>
+    </div>
+  </div>
+</div>

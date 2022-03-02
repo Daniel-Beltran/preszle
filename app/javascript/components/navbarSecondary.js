@@ -5,6 +5,7 @@ const toggleReadTimeSecondaryNavbar = () => {
   const dashboard = document.querySelector('#dashboard');
   const navbarSecondary = document.querySelector('#navbar-secondary')
 
+
   readtime.addEventListener('click', () => {
     console.log('readtime');
   });
