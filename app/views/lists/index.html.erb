@@ -1,0 +1,28 @@
+<div class = "interest-form-container">
+  <h2 class = "subtitle2">Your Lists</h2>
+
+  <div class="interest-form">
+  <div class = "interest-form-collection">
+      <% @lists.each do |list| %>
+        <div class= "interest-button">
+          <p><%= link_to list.name, list_path(list) %></p>
+          <%= link_to "remove",
+                list_path(list),
+                method: :delete,
+                data: {confirm: "sure?"} %>
+        </div>             
+      <%end%> 
+    </div> 
+  </div>
+</div>
+
+
+<div class = "new-list">
+  <h3 class = "subtitle2">Create a new list<h3>
+  <div class = "inp">
+    <%= simple_form_for @list do |f| %>
+      <div><%= f.input :name, placeholder: 'List name', label: false %></div>
+      <div><%= f.submit "Create List", class: "btn btn-primary" %></div>
+    <% end %>
+  </div>  
+</div>  

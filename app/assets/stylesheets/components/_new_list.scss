@@ -1,0 +1,18 @@
+.new-list {
+  position: absolute;
+  width: 80%;
+  bottom: 10px;
+  .inp {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.subtitle3 {
+  font-family: $body-font;//'Poppins', sans-serif;
+  text-align: center;
+  font-size: 13px;
+  // font-weight: normal;
+  color: $gray;
+  margin-top: 15px;
+}

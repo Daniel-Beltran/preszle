@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[new create]
     resources :reviews, only: %i[new create]
   end
-  resources :lists, only: %i[index new create show]
+  resources :lists, only: %i[index new create show destroy]
   resources :user_interests, only: %i[new create index edit update]
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get '/my_interests', to: 'user_interests#index', as: 'my_interests'
