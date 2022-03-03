@@ -1,5 +1,5 @@
 const toggleReadTimeSecondaryNavbar = () => {
-  
+
     const readtime = document.querySelector('#readtime');
     const interests = document.querySelector('#interests');
     const readlists = document.querySelector('#readlists');
