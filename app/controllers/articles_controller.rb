@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 #SAVING AND DISPLAYING 3 PLACEHOLDERS
     3.times do
       @news << ((Article.create! title: "Article", description: "Here goes the description", source: "Article Source", reading_time: 15,
-                 source_url: "https://en.wikipedia.org/wiki/Pretzel", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/BrezelnSalz02_%28cropped%29.JPG/375px-BrezelnSalz02_%28cropped%29.JPG", author: "Its a me", content:"Mario", interest_id: 1))
+                 source_url: "https://en.wikipedia.org/wiki/Pretzel", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/BrezelnSalz02_%28cropped%29.JPG/375px-BrezelnSalz02_%28cropped%29.JPG", author: "Its a me", content:"Mario", interest_id: Interest.first.id))
     end
   end
 
