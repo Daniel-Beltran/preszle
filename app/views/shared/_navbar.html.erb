@@ -17,6 +17,9 @@
     <div class="text-block"><span id="value"></span> min</div>
   </div>
   <div class="navbar-sec int-nav d-none" id="interests-navbar">
-    <p>Interests</p>
+    <p><%= link_to 'Change interests', my_interests_path, class: "text-white"%></p>
+  </div>
+    <div class="navbar-sec int-nav d-none" id="dashboard-navbar">
+    <p><%= link_to 'Go to dashboard', dashboard_path, class: "text-white"%></p>
   </div>
 </div>
