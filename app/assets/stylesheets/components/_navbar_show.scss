@@ -1,0 +1,15 @@
+.second-navbar-icons {
+  font-size: 20px;
+  margin: 8px;
+  width: 94vw;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $pr-white;
+  }
+  a:hover,
+  a:active {
+    color: $pr-yellow;
+    text-decoration: none;
+  }
+}
