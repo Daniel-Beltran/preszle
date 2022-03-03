@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 
 #SAVING AND DISPLAYING 3 ARTICLES USING THE NEWS API
     @api_news = News.new(ENV["NEWS_API"])
-    @three_articles = @api_news.get_everything(q: current_user.interests[0].name, searchIn: "title",
+    @three_articles = @api_news.get_everything(q: current_user.interests.name, searchIn: "title",
                                                from: "2022-02-10&to=2022-03-03", sortBy: "popularity", pageSize: 3)
     @three_articles.each do |n|
       @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
