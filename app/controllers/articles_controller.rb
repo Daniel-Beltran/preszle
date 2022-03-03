@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     @three_articles.each do |n|
       @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
                                 source: n.name, interest_id: 1, author: "Not Found", content: n.content,
-                                reading_time: ((n.content[/\+(.*?)c/, 1].to_i + n.content.size - 11) / 6) / 250.to_f.round)
+                                reading_time: ((n.content[/\+(.*?)c/, 1].to_i + n.content.size - 11) / 6) / 250.to_f.ceil)
     end
 
 #SAVING AND DISPLAYING 3 PLACEHOLDERS
