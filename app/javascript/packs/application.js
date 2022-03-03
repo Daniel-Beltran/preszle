@@ -24,9 +24,11 @@ import "bootstrap";
 // Internal imports:
 import { toggleSecondaryNavbar } from '../components/navbarSecondary';
 import { sliderValue } from '../components/sliderValue';
+import { selectInterests } from '../components/selectInterests';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  selectInterests();
   toggleSecondaryNavbar();
   sliderValue();
 });
