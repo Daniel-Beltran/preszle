@@ -11,7 +11,8 @@
   <div class="navbar-sec rt-nav d-none" id="readtime-navbar">
     <div class="text-block">Readtime</div>
     <div class="slider-container">
-      <input type="range" class="slider" id="slider" min="0" max="30">
+      <input type="range" class="slider" id="slider" min="0" max="30"
+      value="<%= current_user.readtime %>">
     </div>
     <div class="text-block"><span id="value"></span> min</div>
   </div>
