@@ -5,6 +5,7 @@ const toggleSecondaryNavbar = () => {
   const dashboard = document.querySelector('#dashboard');
   const readtimeNavbar = document.querySelector('#readtime-navbar')
   const interestsNavbar = document.querySelector('#interests-navbar')
+  const dashboardNavbar = document.querySelector('#dashboard-navbar')
 
   readtime.addEventListener('click', () => {
     readtimeNavbar.classList.toggle('d-none');
@@ -12,6 +13,7 @@ const toggleSecondaryNavbar = () => {
     if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
     if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
     if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (!dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
     readtime.classList.toggle('text-info');
   });
   interests.addEventListener('click', () => {
@@ -21,6 +23,8 @@ const toggleSecondaryNavbar = () => {
     if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
     if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
     interests.classList.toggle('text-info');
+    if (!dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
+
   });
   readlists.addEventListener('click', () => {
     if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
@@ -28,6 +32,7 @@ const toggleSecondaryNavbar = () => {
     readlists.classList.toggle('text-info');
     if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
     if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (!dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
     if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
   });
   dashboard.addEventListener('click', () => {
@@ -36,6 +41,7 @@ const toggleSecondaryNavbar = () => {
     if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
     dashboard.classList.toggle('text-info');
     if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    dashboardNavbar.classList.toggle('d-none');
     if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
   });
 }
