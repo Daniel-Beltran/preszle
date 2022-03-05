@@ -7,42 +7,44 @@ const toggleSecondaryNavbar = () => {
   const interestsNavbar = document.querySelector('#interests-navbar')
   const dashboardNavbar = document.querySelector('#dashboard-navbar')
 
-  readtime.addEventListener('click', () => {
-    readtimeNavbar.classList.toggle('d-none');
+  readtime?.addEventListener('click', () => {
+    if (readtime) readtime.classList.toggle('text-info');
     if (interests.classList.contains('text-info')) interests.classList.toggle ('text-info');
-    if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
+    if (readtime && readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
     if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
-    if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
-    if (!dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
-    readtime.classList.toggle('text-info');
+    if (readtimeNavbar) readtimeNavbar.classList.toggle('d-none');
+    if (interestsNavbar && !interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (dashboardNavbar && !dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
   });
-  interests.addEventListener('click', () => {
-    if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
-    interestsNavbar.classList.toggle('d-none');
-    if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
-    if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
-    if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
-    interests.classList.toggle('text-info');
-    if (!dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
 
-  });
-  readlists.addEventListener('click', () => {
-    if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
-    if (interests.classList.contains('text-info')) interests.classList.toggle('text-info');
-    readlists.classList.toggle('text-info');
+  interests?.addEventListener('click', () => {
+    // toggle and untoggle the relevant navbar items
+    if (readtime && readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
+    if (interests) interests.classList.toggle('text-info');
+    if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
     if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
-    if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
-    if (!dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
-    if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
+    if (readtimeNavbar && !readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
+    if (interestsNavbar) interestsNavbar.classList.toggle('d-none');
+    if (dashboardNavbar && !dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
+    // go to the page
   });
-  dashboard.addEventListener('click', () => {
-    if (readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
+  readlists?.addEventListener('click', () => {
+    if (readtime && readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
+    if (interests.classList.contains('text-info')) interests.classList.toggle('text-info');
+    if (readlists) readlists.classList.toggle('text-info');
+    if (dashboard.classList.contains('text-info')) dashboard.classList.toggle('text-info');
+    if (readtimeNavbar && !readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
+    if (interestsNavbar && !interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (dashboardNavbar && !dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
+  });
+  dashboard?.addEventListener('click', () => {
+    if (readtime && readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
     if (interests.classList.contains('text-info')) interests.classList.toggle('text-info');
     if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
-    dashboard.classList.toggle('text-info');
-    if (!interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
-    dashboardNavbar.classList.toggle('d-none');
-    if (!readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
+    if (dashboard) dashboard.classList.toggle('text-info');
+    if (readtimeNavbar && !readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
+    if (interestsNavbar && !interestsNavbar.classList.contains('d-none')) interestsNavbar.classList.toggle('d-none');
+    if (dashboardNavbar) dashboardNavbar.classList.toggle('d-none');
   });
 }
 
