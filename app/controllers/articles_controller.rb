@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
                                                from: "2022-02-10&to=2022-03-03", sortBy: "popularity", pageSize: 3)
     @three_articles.each do |n|
       @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
-                                source: n.name, interest_id: 1, author: "Not Found", content: n.content,
+                                source: n.name, interest_id: current_user.interests[0].id, author: "Not Found", content: n.content,
                                 reading_time: ((n.content[/\+(.*?)c/, 1].to_i + n.content.size - 11) / 6) / 250.to_f.ceil(0))
     end
 
