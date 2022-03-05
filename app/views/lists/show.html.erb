@@ -1,0 +1,11 @@
+<%= render 'shared/navbar' %>
+<% @articles.each do |article| %>
+    <div class="article-card">
+      <h2 class="article-title"><%= article.title %></h2>
+      <p class="article-description"><%= article.description %></p>
+      <div class="article-image" style="background-image: url('<%= article.image %>')"></div>
+      <p class="article-source"><%= article.source %></p>
+      <p class="article-reading-time"><%= article.reading_time %>min</p>
+      <%= link_to '', article_path(article), class: 'card-link'  %>
+    </div>
+<% end %>
