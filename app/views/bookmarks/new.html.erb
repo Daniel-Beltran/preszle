@@ -1,0 +1,5 @@
+
+<%= simple_form_for [@article, @bookmark] do |f| %>
+  <%= f.association :list, collection: current_user.lists%>
+  <%= f.button :submit %>
+<% end %>
