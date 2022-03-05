@@ -29,6 +29,7 @@
   height:50px;
   width:300px;
   margin-top: 20px;
+  grid-column: 1/-1;
 }
 
 .interest-form-container {
@@ -38,7 +39,7 @@
 .interest-form-collection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px; 
+  grid-gap: 16px;
 }
 
 .interest-form {
