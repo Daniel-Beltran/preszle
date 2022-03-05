@@ -15,12 +15,8 @@ class UserInterestsController < ApplicationController
     interest_ids.each do |id|
       if params[:user_interest][id] == "1"
         current_user.interests << Interest.find(id.to_i)
-      end  
+      end
     end
     redirect_to articles_path
   end
 end
-
- # interest_ids.delete("")
- # interest_ids.each do |id|
-   # current_user.interests << Interest.find(id)
