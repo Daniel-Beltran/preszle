@@ -29,13 +29,13 @@ height: 100px;
 
 .article-description {
   left: 131px;
-  letter-spacing: 0;
+  // letter-spacing: 0;
   position: relative;
   top: 8px;
   color:$pr-blue;
-display: flex;
-align-items: flex-end;
-font-size: medium;
+  display: flex;
+  align-items: flex-end;
+  font-size: medium;
 
 }
 
@@ -74,7 +74,7 @@ font-size: medium;
   position: relative;
   // width: 105px;
   // bottom: 64px;
-  // background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
   background-color: lightgray;
   // padding-top: 100px;
