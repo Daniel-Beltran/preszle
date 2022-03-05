@@ -18,6 +18,7 @@ const toggleSecondaryNavbar = () => {
   });
 
   interests?.addEventListener('click', () => {
+    // toggle and untoggle the relevant navbar items
     if (readtime && readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
     if (interests) interests.classList.toggle('text-info');
     if (readlists.classList.contains('text-info')) readlists.classList.toggle('text-info');
@@ -25,6 +26,7 @@ const toggleSecondaryNavbar = () => {
     if (readtimeNavbar && !readtimeNavbar.classList.contains('d-none')) readtimeNavbar.classList.toggle('d-none');
     if (interestsNavbar) interestsNavbar.classList.toggle('d-none');
     if (dashboardNavbar && !dashboardNavbar.classList.contains('d-none')) dashboardNavbar.classList.toggle('d-none');
+    // go to the page
   });
   readlists?.addEventListener('click', () => {
     if (readtime && readtime.classList.contains('text-info')) readtime.classList.toggle('text-info');
