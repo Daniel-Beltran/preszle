@@ -1,12 +1,14 @@
 class UserInterestsController < ApplicationController
 
   def index
+    @user_interest = UserInterest.new
     new
   end
 
 
   def new
-    @user_interests = current_user.interests
+    @user_interest = UserInterest.new
+    @user_interests = current_user.interests if current_user.interests
     @interests = Interest.all
   end
 

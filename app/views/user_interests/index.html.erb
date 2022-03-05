@@ -2,15 +2,15 @@
 <div class = "interest-form-container">
   <h2 class = "choose" >Choose your interests</h2>
   <div class = "interest-form">
-    <%=simple_form_for(UserInterest.new, url: my_interests_path, method: :post) do |f|%>
+    <%=simple_form_for(@user_interest, url: user_interests_path, method: :post) do |f|%>
       <div class="interest-form-collection">
       <% @interests.each do |interest|%>
-          <div class = "interest-button user_interest_<%="#{interest.id}"%>">
+        <div class = "interest-button user_interest_<%="#{interest.id}"%>">
           <%= f.input :"#{interest.id}", as: :boolean, label: interest.name, legend_tag: false, input_html: { checked: @user_interests.include?(interest) ? true : false, value: interest.id }%>
-          </div>
+        </div>
       <%end%>
-      </div>
-  </div>
       <%=f.submit :update, class: "interest-update-button"%>
     <%end%>
+    </div>
+  </div>
 </div>

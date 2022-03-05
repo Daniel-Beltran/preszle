@@ -1,16 +1,22 @@
 .title {
-  font-family:  $body-font;//'Poppins', sans-serif;
+  font-family:  $headers-font;//'Poppins', sans-serif;
   text-align: center;
   font-weight: 800;
   font-size: 40px;
   color: $pr-yellow !important;
+  margin-top: 6vh;
 }
 
 .subtitle {
   font-family: $body-font;//'Poppins', sans-serif;
   text-align: center;
-  font-size: 15px;
-  // font-weight: normal;
+  font-size: 18px;
+  font-weight: 300;
   color: $pr-white;
-  margin-top: 15px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.subtitle-dark {
+  color: $pr-dark;
 }

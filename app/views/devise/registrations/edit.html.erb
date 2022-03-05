@@ -1,6 +1,8 @@
+<%= render 'shared/logo_dark' %>
+
 <div class= "container">
 
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2 class="choose">Edit <%= resource_name.to_s.humanize %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -15,7 +17,6 @@
       <% end %>
 
       <%= f.input :current_password,
-                  hint: "leave it blank if you don't want to change it",
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
       <%= f.input :New_password,
@@ -27,10 +28,10 @@
                   input_html: { autocomplete: "cconfirm-password" } %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update", class: 'btn btn-success' %>
+    <div class="form-actions my-3">
+      <%= f.button :submit, "Update", class: 'btn btn-info btn-block' %>
     </div>
   <% end %>
   <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-  <%= link_to "Back", :back, class:"btn btn-success" %>
+  <%= link_to "Back", :back, class:"btn btn-outline-primary btn-block" %>
 </div>

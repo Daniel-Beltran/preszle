@@ -1,11 +1,11 @@
 <div class="nav-container">
-   <div class="navbar-pr">
+  <div class="navbar-pr">
     <%= link_to 'Preszle', articles_path, class: 'brand' %>
     <div class="navbar-icons">
-      <i class="fa-regular fa-clock" id="readtime"></i>
-      <i class="fa-solid fa-binoculars" id="interests"></i>
+      <i class="fa-regular fa-clock disabled" style="color: #6998ab"></i>
+      <%= link_to '', my_interests_path, class:'fa-solid fa-binoculars text-white' %>
       <i class="fa-solid fa-list" id="readlists"></i>
-      <i class="fa-solid fa-user-pen" id="dashboard"></i>
+      <%= link_to '', dashboard_path, class: "fa-solid fa-user-pen text-white"%>
     </div>
   </div>
   <div class="navbar-sec" id="navbar-secondary">
