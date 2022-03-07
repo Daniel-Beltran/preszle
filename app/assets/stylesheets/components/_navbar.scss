@@ -57,3 +57,18 @@
    overflow: hidden;
   background-color: $pr-blue;
 }
+.form-flex {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+.btn-form {
+  height: 24px;
+  width: 84px;
+  margin: auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+}

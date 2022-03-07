@@ -9,17 +9,17 @@
     </div>
   </div>
   <div class="navbar-sec rt-nav d-none" id="readtime-navbar">
-    <div class="text-block">Readtime</div>
-    <div class="slider-container">
-      <input type="range" class="slider" id="slider" min="0" max="30"
-      value="<%= current_user.readtime %>">
-    </div>
-    <div class="text-block"><span id="value"></span> min</div>
+    <form class="form-flex" action="readtime" method="post">
+      <input name="authenticity_token" type="hidden" value="token_value">
+      <div class="text-block">Readtime</div>
+      <input type="range" class="slider" name="readtime" id="slider" min="0" max="30" step="1" value="<%= current_user.readtime %>">
+      <button type="submit" class="btn-info btn-form"><span id="value"></span> min</button>
+    </form>
   </div>
   <div class="navbar-sec int-nav d-none" id="interests-navbar">
     <p><%= link_to 'Change interests', my_interests_path, class: "text-white"%></p>
   </div>
-    <div class="navbar-sec int-nav d-none" id="dashboard-navbar">
+  <div class="navbar-sec int-nav d-none" id="dashboard-navbar">
     <p><%= link_to 'Go to dashboard', dashboard_path, class: "text-white"%></p>
   </div>
  </div>
