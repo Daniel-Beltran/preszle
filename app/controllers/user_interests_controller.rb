@@ -13,6 +13,7 @@ class UserInterestsController < ApplicationController
   end
 
   def create
+    @user_interest = UserInterest.new
     @interests = Interest.all
     @user_interests = current_user.interests
     interest_ids = params[:user_interest].keys
@@ -22,14 +23,15 @@ class UserInterestsController < ApplicationController
         current_user.interests << Interest.find(id.to_i)
       end
     end
-      if current_user.interests.length > 0
-        redirect_to articles_path
-      else  
+    if current_user.interests.length.positive?
+      redirect_to articles_path
+    else
       render :new
-      end
+    end
   end
 
   def update
+    @user_interest = UserInterest.new
     @interests = Interest.all
     @user_interests = current_user.interests
     interest_ids = params[:user_interest].keys
@@ -39,10 +41,10 @@ class UserInterestsController < ApplicationController
         current_user.interests << Interest.find(id.to_i)
       end
     end
-      if current_user.interests.length > 0
-        redirect_to articles_path
-      else  
+    if current_user.interests.length.positive?
+      redirect_to articles_path
+    else
       render :index
-      end
+    end
   end
 end

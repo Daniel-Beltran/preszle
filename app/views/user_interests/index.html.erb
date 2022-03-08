@@ -1,8 +1,8 @@
-<%= render 'shared/navbar' %>
+<%= render 'shared/navbar_disabled' %>
 <div class = "interest-form-container">
   <h2 class = "choose" >Choose your interests</h2>
   <div class = "interest-form">
-    <%=simple_form_for(@user_interest, url: user_interests_path, method: :post) do |f|%>
+    <%=simple_form_for(@user_interest, url: my_interests_path, method: :post) do |f|%>
       <div class="interest-form-collection">
       <% @interests.each do |interest|%>
         <div class = "interest-button user_interest_<%="#{interest.id}"%>">
