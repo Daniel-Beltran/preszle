@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   resources :user_interests, only: %i[new create index]
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get '/my_interests', to: 'user_interests#index', as: 'my_interests'
-  post 'my_interests', to: 'user_interests#update', as: 'my_interests_update'
-
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  post '/my_interests', to: 'user_interests#update', as: 'my_interests_update'
+  post '/readtime', to: 'pages#readtime', as: 'readtime'
 end

@@ -1,14 +1,9 @@
-.slider-container {
-  width: 60vw;
-  margin: 0px 8px;
-  display: flex;
-  align-items: center;
-}
 .slider {
   -webkit-appearance: none;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
   height: 24px;
-  background: linear-gradient(90deg, $pr-dark 50%, $pr-white 50%);
   outline: none;
   border-radius: 12px;
 }
