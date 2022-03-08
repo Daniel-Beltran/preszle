@@ -22,15 +22,17 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 6vh;
 }
 
 .bottom-landing p{
   color: $pr-white;
-  font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 4vh;
+  font-size: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
   text-align:center;
+  // margin-right: 60px;
+
+
 }
 
 .bottom-landing a{
@@ -55,6 +57,8 @@
   filter:brightness(70%);
   // opacity: .9;
   background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2)), url('vincent-nicolas-hMuygRVm4_8-unsplash.jpg');
+
+  background-image: url(asset_path('vincent-nicolas-hMuygRVm4_8-unsplash.jpg'));
 
   // overflow: hidden;
   vertical-align: middle;
