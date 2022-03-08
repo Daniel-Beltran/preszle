@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   require 'news-api'
   def index
+    @user = current_user
     @news = []
 
 #HOW TO CHECK THE READING TIME OF THE ARTICLES MATCHES WITH THE USERS READING TIME

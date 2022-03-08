@@ -53,16 +53,12 @@
   top: 0 ;
   left: 0;
   filter:brightness(70%);
-  // opacity: .9;
-  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2)), url('vincent-nicolas-hMuygRVm4_8-unsplash.jpg');
-
-  // overflow: hidden;
-  vertical-align: middle;
-  object-fit: fill;
+  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2)), url('vincent-nicolas-adapted.jpg');
+  // vertical-align: middle;
+  // object-fit: cover;
   background-size: cover;
   box-shadow: 0 10px 15px rgba(0 , 0 , 0 , 0.1);
-  justify-content: center;
-
+  // justify-content: center;
   text-decoration: center;
   &:hover {
     text-decoration: none;
