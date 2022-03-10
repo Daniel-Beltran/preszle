@@ -56,9 +56,11 @@
   left: 0;
   filter:brightness(70%);
   // opacity: .9;
-  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2)), url('vincent-nicolas-hMuygRVm4_8-unsplash.jpg');
+  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2));
+  // , url('image4.jpg');
 
-  background-image: url(asset_path('vincent-nicolas-hMuygRVm4_8-unsplash.jpg'));
+  // background-image: url(asset_path('image4.jpg'));
+
 
   // overflow: hidden;
   vertical-align: middle;
