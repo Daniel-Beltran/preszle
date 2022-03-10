@@ -3,17 +3,17 @@ class ListsController < ApplicationController
   def index
     @lists = current_user.lists
     new
-  end  
+  end
 
   def show
     @list = List.find(params[:id])
     @articles = @list.articles
-  end  
+  end
 
   def new
     @list = List.new
   end
-  
+
   def create
     @list = List.new(list_params)
     current_user.lists << @list
@@ -45,7 +45,7 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
-  end  
+  end
 
 
 end
