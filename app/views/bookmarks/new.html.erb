@@ -1,5 +1,18 @@
-
-<%= simple_form_for [@article, @bookmark] do |f| %>
-  <%= f.association :list, collection: current_user.lists%>
-  <%= f.button :submit %>
-<% end %>
+<%= render 'shared/navbar_back' %>
+<div class = "interest-form-container">
+<%if current_user.lists.length.positive?%>
+  <%= simple_form_for [@article, @bookmark] do |f| %>
+    <%= f.association :list, collection: current_user.lists, prompt: 'Choose one list', label: false%>
+    <%= f.submit "Add article to list", class: "interest-update-button" %>
+  <% end %>
+<%else%>
+  <p>Please crate a list first</p>
+  <%=simple_form_for @list do |f| %>
+        <div class = "inp">
+          <div><%= f.input :name, placeholder: 'List name', label: false %></div>
+          <div><%= f.submit "+", class: "create-list" %></div>
+        </div>  
+  <% end %>
+  <%#Bookmark.create!(article: @article, list:@list)%>      
+<%end%>        
+</div>
