@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
                                                   from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press",
                                                   pageSize: 9)
     @possible_articles.each do |n|
-      @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 4) / 200.to_f.ceil(0)
+      @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 7) / 250.to_f.ceil(0)
       if @reading_time <= current_user.readtime
         @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
                                   source: n.name, interest_id: current_user.interests[0].id,
