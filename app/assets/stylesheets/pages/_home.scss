@@ -22,15 +22,17 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 6vh;
 }
 
 .bottom-landing p{
   color: $pr-white;
-  font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 4vh;
+  font-size: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
   text-align:center;
+  // margin-right: 60px;
+
+
 }
 
 .bottom-landing a{
@@ -53,9 +55,16 @@
   top: 0 ;
   left: 0;
   filter:brightness(70%);
-  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2)), url('vincent-nicolas-adapted.jpg');
-  // vertical-align: middle;
-  // object-fit: cover;
+  // opacity: .9;
+  background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2));
+  // , url('image4.jpg');
+
+  // background-image: url(asset_path('image4.jpg'));
+
+
+  // overflow: hidden;
+  vertical-align: middle;
+  object-fit: fill;
   background-size: cover;
   box-shadow: 0 10px 15px rgba(0 , 0 , 0 , 0.1);
   // justify-content: center;
