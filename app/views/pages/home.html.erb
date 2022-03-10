@@ -19,4 +19,18 @@
       <% end %>
     </div>
  </div>
-  
+<script>
+  function nextSlide(image) {
+    var banner = document.querySelector(".banner")
+    banner.style.backgroundImage="url("+image+")"
+  }
+
+  var images = <%=raw @images %>
+  var nextIndex = 0
+  nextSlide(images[nextIndex])
+
+  setInterval(() => {
+    nextIndex = (nextIndex + 1) % images.length
+    nextSlide(images[nextIndex])
+  }, 5000)
+</script>

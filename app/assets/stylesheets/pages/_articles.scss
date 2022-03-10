@@ -2,33 +2,33 @@
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-width: 740px;
-position: absolute;
-height: 100px;
+// max-width: 740px;
+// height: 100px;
  }
  .article-card {
   flex: auto;
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid #388697;
-  width: 740px;
+  // width: 740px;
   position: relative;
 
  }
 
  .article-title {
-  left: 131px;
+  // left: 131px;
   letter-spacing: 0;
   position: relative;
   top: 25px;
   font-size: 25px;
   color: $pr-dark;
   padding-bottom: 5%;
+  font-size: 20px;
 }
 
 
 .article-description {
-  left: 131px;
+  // left: 131px;
   // letter-spacing: 0;
   position: relative;
   top: 8px;
@@ -54,7 +54,7 @@ height: 100px;
 }
 
 .article-reading-time {
-  left: 700px;
+  // left: 700px;
   letter-spacing: 0;
   position: relative;
   bottom: -15px;
@@ -68,22 +68,22 @@ height: 100px;
 
 .article-image {
   border-radius: 6px;
-  height: 132px;
+  height: 250px;
   left: 9px;
   object-fit: cover;
   position: relative;
-  // width: 105px;
+  width: 100%;
   // bottom: 64px;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100%;
   background-color: lightgray;
   // padding-top: 100px;
   // padding-bottom: 20px;
   // padding-left: 50px;
-  padding-right: 50px;
-  margin-left: 150px;
-  margin-bottom: -20px;
-}
+  // padding-right: 50px;
+  // margin-left: 150px;
+  // margin-bottom: -20px;
+ }
 
 .card-link {
   position: absolute;

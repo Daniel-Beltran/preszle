@@ -3,26 +3,26 @@ class ListsController < ApplicationController
   def index
     @lists = current_user.lists
     new
-  end  
+  end
 
   def show
     @list = List.find(params[:id])
     @articles = @list.articles
-  end  
+  end
 
   def new
     @list = List.new
   end
-  
+
   def create
     @list = List.new(list_params)
     current_user.lists << @list
     if @list.save
       redirect_to lists_path
-    else 
-      render :new     
-   end  
-  end  
+     else
+      render :new
+    end
+  end
 
   def destroy
     @list = List.find(params[:id])
@@ -34,7 +34,7 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name)
-  end  
+  end
 
 
 end

@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
 
   def home
+    @images = []
+    for x in [1,2,3,4] do
+      @images.push(ActionController::Base.helpers.image_path("image#{x}.jpg"))
+    end
   end
 
   def readtime
