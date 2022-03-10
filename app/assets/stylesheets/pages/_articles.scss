@@ -5,7 +5,7 @@
 }
 
 .article-container {
-  flex-grow: 1;
+  height: 93%;
 }
 
 .article-card {
@@ -13,7 +13,7 @@
 }
 
 .article-hor-img {
-  height: 33%;
+  height: 40%;
   width: 100%;
   object-fit: cover;
   overflow: hidden;
@@ -23,8 +23,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 66%;
-  margin: 4px 8px;
+  height: 60%;
+  margin: 8px 16px;
 }
 
 .article-title h2 {
@@ -34,15 +34,20 @@
 }
 
 .article-description {
-  color:$pr-blue;
+  color: $pr-blue;
   font-size: small;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .article-card-footer{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
   p {
     font-weight: 600;
     font-size: medium;
