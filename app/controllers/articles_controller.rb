@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
                                   source: n.name, interest_id: current_user.interests[0].id,
                                   reading_time: @reading_time)
       end
+    end
 
 #SAVING AND DISPLAYING 3 PLACEHOLDERS
     #3.times do
