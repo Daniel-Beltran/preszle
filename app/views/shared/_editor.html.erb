@@ -1,0 +1,6 @@
+<div class="editor">
+  <% simple_form_for article, url: editor_path do |f| %>
+    <%= f.input :card_orientation, as: :radio_buttons, collection: %w[horizontal right left] %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>

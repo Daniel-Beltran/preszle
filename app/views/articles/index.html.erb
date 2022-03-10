@@ -2,7 +2,10 @@
   <%= render 'shared/navbar' %>
   <div class="article-container">
     <% @news.each do |n| %>
-      <%= render 'shared/horizontal_card', article: n %>
+      <%= render "shared/#{n.card_orientation}_card", article: n %>
+      <%# if current_user.editor %>
+      <%= render "shared/editor", locals: { article: n } %>
+      <% #end %>
     <% end %>
   </div>
 </div>

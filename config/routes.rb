@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/my_interests', to: 'user_interests#index', as: 'my_interests'
   post '/my_interests', to: 'user_interests#update', as: 'my_interests_update'
   post '/readtime', to: 'pages#readtime', as: 'readtime'
+  post '/editor', to: 'articles#editor', as: 'editor'
 end

@@ -32,4 +32,10 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
+
+  def editor
+    article = Article.find(params[:id])
+    article.reading_time = params[:orientation]
+    article.save
+  end
 end
