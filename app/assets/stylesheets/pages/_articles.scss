@@ -1,88 +1,54 @@
- .article-container{
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-width: 740px;
-position: absolute;
-height: 100px;
- }
- .article-card {
-  flex: auto;
+.index-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-container {
+  flex-grow: 1;
+}
+
+.article-card {
+  height: 33%;
+}
+
+.article-hor-img {
+  height: 33%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.article-body {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid #388697;
-  width: 740px;
-  position: relative;
-
- }
-
- .article-title {
-  left: 131px;
-  letter-spacing: 0;
-  position: relative;
-  top: 25px;
-  font-size: 25px;
-  color: $pr-dark;
-  padding-bottom: 5%;
+  height: 66%;
+  margin: 4px 8px;
 }
 
+.article-title h2 {
+  font-size: large;
+  margin: 0;
+  padding: 0;
+}
 
 .article-description {
-  left: 131px;
-  // letter-spacing: 0;
-  position: relative;
-  top: 8px;
   color:$pr-blue;
+  font-size: small;
+  margin: 0;
+  padding: 0;
+}
+
+.article-card-footer{
   display: flex;
-  align-items: flex-end;
-  font-size: medium;
-
-}
-
-.article-source {
-  left: 10px;
-  letter-spacing: 0;
-  position: relative;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
-  color: #000000;
-  padding-left: 150px;
-  bottom: -19px;
-}
-
-.article-reading-time {
-  left: 700px;
-  letter-spacing: 0;
-  position: relative;
-  bottom: -15px;
-
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 18px;
-}
-
-.article-image {
-  border-radius: 6px;
-  height: 132px;
-  left: 9px;
-  object-fit: cover;
-  position: relative;
-  // width: 105px;
-  // bottom: 64px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color: lightgray;
-  // padding-top: 100px;
-  // padding-bottom: 20px;
-  // padding-left: 50px;
-  padding-right: 50px;
-  margin-left: 150px;
-  margin-bottom: -20px;
+  justify-content: space-between;
+  p {
+    font-weight: 600;
+    font-size: medium;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .card-link {

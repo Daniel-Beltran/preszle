@@ -1,13 +1,8 @@
+<div class="index-container">
   <%= render 'shared/navbar' %>
-<div class="article-container">
-  <% @news.each do |n| %>
-    <div class="article-card">
-      <h2><div class="article-title"><%= n.title %></div></h2>
-      <div class="article-image" style="background-image: url('<%= n.image %>')"></div>
-      <p class="article-source"><%= n.source %></p>
-      <p><div class="article-description"><%= n.description %></div></p>
-      <p><div class="article-reading-time"><%= n.reading_time %>min</div></p>
-      <%= link_to '', article_path(n), class: 'card-link'  %>
-    </div>
-  <% end %>
+  <div class="article-container">
+    <% @news.each do |n| %>
+      <%= render 'shared/horizontal_card', article: n %>
+    <% end %>
+  </div>
 </div>
