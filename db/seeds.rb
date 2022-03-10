@@ -41,14 +41,29 @@ lists = ["Metro reading", "Impress the boss", "Toilet brake"]
 User.all.each do |user|
   lists.each do |list|
     List.create!(name: list,
-                user_id: user.id) 
+                user_id: user.id)
   end
 end
 
 
 puts 'creating User_Interest'
 
-(0...10).each do 
+(0...10).each do
   UserInterest.create!(user_id: User.all.sample[:id],
                         interest_id: Interest.all.sample[:id])
 end
+
+puts 'Fetching articles from the API'
+
+@api_news = News.new(ENV["NEWS_API"])
+    @possible_articles = @api_news.get_everything(q: @interests, searchIn: "title",
+                                                  from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press",
+                                                  pageSize: 9)
+    @possible_articles.each do |n|
+      @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 7) / 250.to_f.ceil(0)
+      if @reading_time <= current_user.readtime
+        @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
+                                  source: n.name, interest_id: current_user.interests[0].id,
+                                  reading_time: @reading_time)
+      end
+    end
