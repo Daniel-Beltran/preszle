@@ -58,11 +58,10 @@ puts 'Fetching articles from the API'
 
 Interest.all.each do |n|
   news = News.new(ENV["NEWS_API"])
-    articles = news.get_everything(q: n.name, searchIn: "title", from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press", pageSize: 100)
+    articles = news.get_everything(q: n.name, searchIn: "title", from: "#{(DateTime.now - 27.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press", pageSize: 100)
     articles.each do |a|
         Article.create! title: a.title, description: a.description, source_url: a.url, image: a.urlToImage,
                                   source: a.name, interest_id: n.id,
-                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 250.to_f.ceil(0)
-    puts "article created"
+                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 6) / 280.to_f.ceil(0) + 1
       end
     end
