@@ -12,7 +12,7 @@
     <form class="form-flex" action="readtime" method="post">
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
       <div class="text-block"> <i class="far fa-clock"></i>Readtime</div>
-      <input type="range" class="slider" name="readtime" id="slider" min="0" max="30" step="1" value="<%= current_user.readtime %>">
+      <input type="range" class="slider" name="readtime" id="slider" min="0" max="15" step="1" value="<%= current_user.readtime %>">
       <button type="submit" class="btn-info btn-form"><span id="value"></span> min</button>
     </form>
   </div>

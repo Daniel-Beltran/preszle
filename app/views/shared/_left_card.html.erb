@@ -1,0 +1,12 @@
+<div class="left article-card">
+  <%= image_tag article.image, class: 'article-vert-img' %>
+  <div class="article-body art-body-vert">
+    <div class="article-title vert-5-lines"><h2><%= article.title %></h2></div>
+    <div class="article-description vert-5-lines"><%= article.description %></div>
+    <div class="article-card-footer">
+      <p class="article-source"><%= article.source %></p>
+      <p class="article-reading-time"><%= article.reading_time %>min</p>
+    </div>
+  </div>
+  <%= link_to '', article_path(article), class: 'card-link'  %>
+</div>

@@ -1,0 +1,12 @@
+<div class="index-container">
+  <div class="article-container">
+    <%= render "shared/#{@article.card_orientation}_card", article: @article %>
+    <div class="m-2">
+      <%= simple_form_for @article do |f| %>
+        <%= f.input :card_orientation, as: :radio_buttons, collection: %w[horizontal right left], wrapper: :vertical_collection_inline %>
+        <%= f.submit 'submit', class: 'btn btn-info'  %>
+      <% end %>
+    </div>
+    <%= link_to 'back', articles_path, class: 'btn btn-outline-primary m-2' %>
+  </div>
+</div>
