@@ -1,0 +1,14 @@
+ <%= render 'shared/navbar' %>
+ <div class = "interest-form-container">
+ <div class="interest-form">
+    <div class = "new-list2">
+      <h3 class = "subtitle2">Add new name<h3>
+        <%= simple_form_for @list do |f| %>
+        <div class = "inp">
+          <div><%= f.input :name, placeholder: 'Add new Name', label: false %></div>
+          <div><%= f.submit "+", class: "create-list" %></div>
+        </div>  
+        <% end %>  
+    </div>  
+  </div>  
+  </div>

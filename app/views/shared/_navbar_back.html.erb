@@ -1,0 +1,16 @@
+<div class="nav-container">
+  <div class="navbar-pr">
+    <%= link_to 'Preszle', articles_path, class: 'brand' %>
+    <div class="navbar-icons">
+      <i class="fa-regular fa-clock disabled" style="color: #6998ab"></i>
+      <%= link_to '', my_interests_path, class:'fa-solid fa-binoculars text-white', id:'interests', remote: true %>
+      <%= link_to '', lists_path, class:'fa-solid fa-list text-white', id:'readlists' %>
+      <%= link_to '', dashboard_path, class: 'fa-solid fa-user-pen text-white', id:'dashboard', remote: true %>
+    </div>
+  </div>
+  <div class="navbar-sec" id="navbar-secondary">
+    <div class="second-navbar-icons">
+      <%= link_to '', request.referer.present? ? request.referer : default_path, class: 'fa-solid fa-arrow-left', id: 'back'  %>
+    </div>
+  </div>
+</div>

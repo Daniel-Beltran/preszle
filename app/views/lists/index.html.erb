@@ -5,13 +5,22 @@
   <div class="interest-form">
   <div class = "interest-form-collection">
       <% @lists.each do |list| %>
-        <div class= "list-button">
-          <p><%= link_to list.name, list_path(list) %></p>
-          <%= link_to "remove",
-                list_path(list),
-                method: :delete,
-                data: {confirm: "sure?"} %>
-        </div>             
+        <%if list.name == "History"%>
+          <div class= "list-button">
+            <p><%= link_to list.name, list_path(list) %></p>
+          </div>  
+        <%else%>
+          <div class= "list-button">
+            <p><%= link_to list.name, list_path(list) %></p> 
+            <div class = "remove-edit">
+              <%= link_to "remove /",
+                    list_path(list),
+                    method: :delete,
+                    data: {confirm: "sure?"} %>
+              <%= link_to "edit", edit_list_path(list) %>   
+            </div>     
+          </div>
+        <%end%>             
       <%end%> 
     </div> 
   
