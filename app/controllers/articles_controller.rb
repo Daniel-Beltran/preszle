@@ -1,26 +1,17 @@
 class ArticlesController < ApplicationController
   require 'news-api'
+
+#grab articles from the DB where the interest id matches the interest id of the current user
+
   def index
     @news = []
-    @interests_array = []
-    @reading_time = 0
+    Article.all.each do |n|
+    if n.interest_id == current_user.interests.id
+      @news << n
+    end
+  end
 
-    current_user.interests.each do |i|
-      @interests_array << i.name
-    end
-    @interests = @interests_array.join(" OR ")
-    @api_news = News.new(ENV["NEWS_API"])
-    @possible_articles = @api_news.get_everything(q: @interests, searchIn: "title",
-                                                  from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press",
-                                                  pageSize: 9)
-    @possible_articles.each do |n|
-      @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 7) / 250.to_f.ceil(0)
-      if @reading_time <= current_user.readtime
-        @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
-                                  source: n.name, interest_id: current_user.interests[0].id,
-                                  reading_time: @reading_time)
-      end
-    end
+
 
 #SAVING AND DISPLAYING 3 PLACEHOLDERS
     #3.times do

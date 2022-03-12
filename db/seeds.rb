@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+ require 'news-api'
 
 puts 'empty last seed'
 Interest.destroy_all
 List.destroy_all
-User.destroy_all
+#User.destroy_all
 Review.destroy_all
 Bookmark.destroy_all
 Article.destroy_all
@@ -55,15 +56,13 @@ end
 
 puts 'Fetching articles from the API'
 
-@api_news = News.new(ENV["NEWS_API"])
-    @possible_articles = @api_news.get_everything(q: @interests, searchIn: "title",
-                                                  from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press",
-                                                  pageSize: 9)
-    @possible_articles.each do |n|
-      @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 7) / 250.to_f.ceil(0)
-      if @reading_time <= current_user.readtime
-        @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
-                                  source: n.name, interest_id: current_user.interests[0].id,
-                                  reading_time: @reading_time)
+Interest.all.each do |n|
+  news = News.new(ENV["NEWS_API"])
+    articles = news.get_everything(q: n.name, searchIn: "title", from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press", pageSize: 100)
+    articles.each do |a|
+        Article.create! title: a.title, description: a.description, source_url: a.url, image: a.urlToImage,
+                                  source: a.name, interest_id: n.id,
+                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 250.to_f.ceil(0)
+    puts "article created"
       end
     end
