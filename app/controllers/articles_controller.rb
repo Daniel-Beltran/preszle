@@ -2,10 +2,6 @@ class ArticlesController < ApplicationController
   require 'news-api'
   def index
     @news = []
-    @interests_array = []
-    current_user.interests.each do |i|
-      @interests_array << i.name
-    end
 
     Article.all.each do |n|
       (0...current_user.interests.count).each do |i|
