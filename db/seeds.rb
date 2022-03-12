@@ -65,4 +65,5 @@ Interest.all.each do |n|
 
                                   reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 280.to_f.ceil(0) + 1
       end
+    puts "#{n.name} created with #{articles.length} articles"
     end
