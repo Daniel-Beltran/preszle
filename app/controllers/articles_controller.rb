@@ -9,18 +9,19 @@ class ArticlesController < ApplicationController
       @interests_array << i.name
     end
     @interests = @interests_array.join(" OR ")
-    @api_news = News.new(ENV["NEWS_API"])
-    @possible_articles = @api_news.get_everything(q: @interests, searchIn: "title",
-                                                  from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press",
-                                                  pageSize: 9)
-    @possible_articles.each do |n|
-      @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 7) / 250.to_f.ceil(0)
-      if @reading_time <= current_user.readtime
-        @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
-                                  source: n.name, interest_id: current_user.interests[0].id,
-                                  reading_time: @reading_time)
-      end
-    end
+    @news = Article.last (10)
+    # @api_news = News.new(ENV["NEWS_API"])
+    # @possible_articles = @api_news.get_everything(q: @interests, searchIn: "title",
+    #                                               from: "#{(DateTime.now - 25.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press",
+    #                                               pageSize: 9)
+    # @possible_articles.each do |n|
+    #   @reading_time = ((n.content[/\+(.*?)c/, 1].to_i + n.content.size) / 7) / 250.to_f.ceil(0)
+    #   if @reading_time <= current_user.readtime
+    #     @news << (Article.create! title: n.title, description: n.description, source_url: n.url, image: n.urlToImage,
+    #                               source: n.name, interest_id: current_user.interests[0].id,
+    #                               reading_time: @reading_time)
+    #   end
+    # end
 
 #SAVING AND DISPLAYING 3 PLACEHOLDERS
     #3.times do
@@ -31,5 +32,27 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+  end
+
+  def edit_card
+    @article = Article.find(params[:format])
+  end
+
+  def update
+    if current_user.editor
+      article = Article.find(params[:id])
+      article.card_orientation = article_params[:card_orientation]
+      if article.save
+        redirect_to edit_card_path(article)
+      else
+        render :edit_card
+      end
+    end
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:card_orientation)
   end
 end

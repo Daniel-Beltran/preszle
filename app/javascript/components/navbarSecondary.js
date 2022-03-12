@@ -1,6 +1,6 @@
 const startSlider = (slider) => {
   const w = slider.offsetWidth;
-  const x = (((w - 24) * slider.value / 30) + 12) / w * 100;
+  const x = (((w - 24) * slider.value / 15) + 12) / w * 100;
   slider.style.background = "linear-gradient(90deg, #153142 " + x + "%, #FEFEFA " + x + "%)";
 }
 
