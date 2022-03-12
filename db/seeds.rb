@@ -9,14 +9,14 @@ require 'faker'
  require 'news-api'
 
 puts 'empty last seed'
-Interest.destroy_all
+Article.destroy_all
 List.destroy_all
 #User.destroy_all
 Review.destroy_all
 Bookmark.destroy_all
-Article.destroy_all
 UserInterest.destroy_all
-Article.destroy_all
+Interest.destroy_all
+
 
 puts 'creating users'
 

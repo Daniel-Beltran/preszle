@@ -5,8 +5,13 @@ class ArticlesController < ApplicationController
 
   def index
     @news = []
+    @interests_array = []
+    current_user.interests.each do |i|
+      @interests_array << i.name
+    end
+
     Article.all.each do |n|
-    if n.interest_id == current_user.interests.id
+    if n.interest_id == current_user.interests[0].id
       @news << n
     end
   end
