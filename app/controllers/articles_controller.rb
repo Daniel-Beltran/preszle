@@ -10,11 +10,12 @@ class ArticlesController < ApplicationController
     Article.all.each do |n|
       (0...current_user.interests.count).each do |i|
         if n.interest_id == current_user.interests[i].id
-          @news << n
+          if n.reading_time <= current_user.readtime
+            @news << n
+          end
         end
       end
     end
-
   end
 
   def show

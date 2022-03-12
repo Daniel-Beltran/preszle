@@ -62,7 +62,6 @@ Interest.all.each do |n|
     articles.each do |a|
         Article.create! title: a.title, description: a.description, source_url: a.url, image: a.urlToImage,
                                   source: a.name, interest_id: n.id,
-                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 250.to_f.ceil(0)
-    puts "article created"
+                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 280.to_f.ceil(0) + 1
       end
     end
