@@ -3,9 +3,9 @@
   <div class="article-container">
     <% @news.each do |n| %>
       <%= render "shared/#{n.card_orientation}_card", article: n %>
-      <%# if current_user.editor %>
-      <%= render "shared/editor", locals: { article: n } %>
-      <% #end %>
+      <% if current_user.editor %>
+        <%=  link_to 'edit orientation', edit_card_path(n), class: 'btn btn-info' %>
+      <% end %>
     <% end %>
   </div>
 </div>
