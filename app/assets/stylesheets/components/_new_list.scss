@@ -6,6 +6,16 @@
   }
 }
 
+.new-list2{
+  position: absolute;
+  .inp {
+    display: flex;
+  }
+}
+
+.remove-edit{
+  margin-right: 6px;
+}
 
 .create-list{
   width: 38px;
@@ -23,13 +33,33 @@
   margin-top: 15px;
 }
 
+
 .list-button {
-  border: 2px;
-  border-color: $pr-blue;
-  border-style: solid;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
-  text-align: center;
-  margin-top: 30px;
-} 
+  p { 
+    border: 2px;
+    border-color: $pr-blue;
+    border-style: solid;
+    width: 140px;
+    height: 60px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 30px; 
+    margin-bottom: 8px;
+    background-color: $pr-blue;
+   
+   
+    &:hover{
+      background-color: $pr-yellow;
+      border-color: $pr-yellow;
+    }
+     a{
+       padding: 20px 10px 25px 10px;
+       overflow-wrap: break-word;
+       color: $pr-white;
+       text-decoration: none;
+     }
+  }
+  a{
+    
+  }
+}

@@ -10,8 +10,7 @@
   </div>
   <div class="navbar-sec" id="navbar-secondary">
     <div class="second-navbar-icons">
-      <%= link_to '', articles_path, class: 'fa-solid fa-arrow-left', id: 'back' %>
-      <%= link_to '', new_article_bookmark_path(@article), class: 'fa-solid fa-heart', id: 'save' %>
+      <%= link_to '', request.referer.present? ? request.referer : default_path, class: 'fa-solid fa-arrow-left', id: 'back'  %>
     </div>
   </div>
 </div>

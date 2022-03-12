@@ -24,6 +24,7 @@ class UserInterestsController < ApplicationController
       end
     end
     if current_user.interests.length.positive?
+      List.create!(name: "History", user_id: current_user.id) 
       redirect_to articles_path
     else
       render :new
