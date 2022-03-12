@@ -1,18 +1,11 @@
 <%= render 'shared/navbar_back' %>
 <% @articles.each do |article| %>
-<% bookmark = Bookmark.find_by(list: @list, article: article)%>  
-    <div class="article-card2">
-      <h2 class="article-title2"><%= article.title %></h2>
-      <p class="article-description2"><%= article.description %></p>
-      <div class="article-image2" style="background-image: url('<%= article.image %>')"></div>
-      <p class="article-source2"><%= article.source %></p>
-      <p class="article-reading-time2"><%= article.reading_time %>min</p>
-      <%= link_to '', article_path(article), class: 'card-link'  %>       
-    </div>
+  <% bookmark = Bookmark.find_by(list: @list, article: article)%>
+  <%= render "shared/#{article.card_orientation}_card", article: article %>
     <div><%= link_to "remove",
                 bookmark_path(bookmark),
                 method: :delete,
-                data: {confirm: "sure?"}, 
+                data: {confirm: "sure?"},
                 class: "remove-bookmark"%>
-      </div> 
+      </div>
 <% end %>
