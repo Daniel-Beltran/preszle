@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root to: 'pages#home', as: :unauthenticated_route
   end
   authenticated :user do
-    root to: 'articles#index', as: :authenticated_route
+    root to: 'user_interests#new', as: :authenticated_route
   end
   resources :articles, only: %i[index show update] do
     resources :bookmarks, only: %i[new create]
