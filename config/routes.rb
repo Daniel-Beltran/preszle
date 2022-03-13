@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+
+  unauthenticated :user do
+    root to: 'pages#home', as: :unauthenticated_route
+  end
+  authenticated :user do
+    root to: 'articles#index', as: :authenticated_route
+  end
   resources :articles, only: %i[index show update] do
     resources :bookmarks, only: %i[new create]
     resources :reviews, only: %i[new create]
