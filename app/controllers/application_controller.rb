@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
     @User = User.find(params[:id])
     if @user.update(params.require(:user).permit(:name, :email, :password))
       flash[:success] = "you are updated!"
-    else
     end
     redirect_to articles_path
   end
