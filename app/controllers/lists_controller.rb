@@ -20,8 +20,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to lists_path
     else 
-      @lists = current_user.lists
-      render :new    
+      redirect_to lists_path, notice: "Invalid name"
    end  
   end  
 
