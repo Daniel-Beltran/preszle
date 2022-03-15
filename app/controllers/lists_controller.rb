@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
 
+
   def index
     @lists = current_user.lists
     new
@@ -24,6 +25,16 @@ class ListsController < ApplicationController
    end  
   end  
 
+  def create_on_bookmarks
+    @list = List.new(list_params)
+    current_user.lists << @list
+    if @list.save
+      redirect_to new_article_bookmark_path(params[:id])
+    else 
+      redirect_to new_article_bookmark_path(params[:id]), notice: "Invalid name"
+   end  
+  end
+
   def destroy
     @list = List.find(params[:id])
     @list.destroy
@@ -45,6 +56,5 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:name)
   end
-
 
 end
