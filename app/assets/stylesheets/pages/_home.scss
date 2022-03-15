@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.carousel-container {
+  position: relative;
+
+}
+
  .container-landing
  {
   position: relative;
@@ -7,6 +12,20 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+}
+
+.container-landing-test
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  z-index: 100;
 }
 
 .container-logo{
@@ -33,14 +52,6 @@
   padding-right: 15px;
   padding-left: 15px;
   text-align:center;
-}
-
-.carousel-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .bottom-landing a{
