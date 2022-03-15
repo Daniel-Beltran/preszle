@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
     @User = User.find(params[:id])
     if @user.update(params.require(:user).permit(:name, :email, :password))
       flash[:success] = "you are updated!"
-    else
     end
     redirect_to articles_path
   end
@@ -15,5 +14,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password])
 
     devise_parameter_sanitizer.permit(:edit, keys: [:name, :email, :password])
+  end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 end

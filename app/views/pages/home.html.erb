@@ -1,102 +1,24 @@
 
-<div id="carouselSlideShow" class="carousel slide" data-ride="carousel">
+<div id="carouselSlideShow" class="carousel slide" data-ride="carousel" data-interval="5000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image1.jpg' %>');" alt="First slide"> </div>
+      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image1_small.jpg' %>');" alt="First slide"> </div>
       <div class="container-landing">
-
-        <div class="container-logo">
-          <%= render 'shared/start_logo' %>
-        </div>
-
-        <div class="bottom-landing">
-          <p > The news at your fingertips, <br>
-          served in pretzel sized portions </p>
-          <% if current_user %>
-            <% if current_user.interests.length < 1 %>
-              <%= link_to 'Start', new_user_interest_path %>
-            <%else%>
-              <%= link_to 'Start', articles_path %>
-            <% end %>
-          <% else %>
-            <%= link_to "Start", new_user_session_path %>
-          <% end %>
-        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image2.jpg' %>');" alt="Second slide"> </div>
-
+      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image2_small.jpg' %>');" alt="Second slide"> </div>
       <div class="container-landing">
-        <div class="banner">  </div>
-
-        <div class="container-logo">
-          <%= render 'shared/start_logo' %>
-        </div>
-
-        <div class="bottom-landing">
-          <p > The news at your fingertips, <br>
-          served in pretzel sized portions </p>
-          <% if current_user %>
-            <% if current_user.interests.length < 1 %>
-              <%= link_to 'Start', new_user_interest_path %>
-            <%else%>
-              <%= link_to 'Start', articles_path %>
-            <% end %>
-          <% else %>
-            <%= link_to "Start", new_user_session_path %>
-          <% end %>
-        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image3.jpg' %>');" alt="Third slide"> </div>
-
+      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image3_small.jpg' %>');" alt="Third slide"> </div>
       <div class="container-landing">
-        <div class="banner">  </div>
-
-        <div class="container-logo">
-          <%= render 'shared/start_logo' %>
-        </div>
-
-        <div class="bottom-landing">
-          <p > The news at your fingertips, <br>
-          served in pretzel sized portions </p>
-          <% if current_user %>
-            <% if current_user.interests.length < 1 %>
-              <%= link_to 'Start', new_user_interest_path %>
-            <%else%>
-              <%= link_to 'Start', articles_path %>
-            <% end %>
-          <% else %>
-            <%= link_to "Start", new_user_session_path %>
-          <% end %>
-        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image4.jpg' %>');" alt="Fourth slide"> </div>
-
+      <div class="d-block w-100 banner" style="background-image: url('<%= asset_url 'image4_small.jpg' %>');" alt="Fourth slide"> </div>
       <div class="container-landing">
-        <div class="banner">  </div>
-
-        <div class="container-logo">
-          <%= render 'shared/start_logo' %>
-        </div>
-
-        <div class="bottom-landing">
-          <p > The news at your fingertips, <br>
-          served in pretzel sized portions </p>
-          <% if current_user %>
-            <% if current_user.interests.length < 1 %>
-              <%= link_to 'Start', new_user_interest_path %>
-            <%else%>
-              <%= link_to 'Start', articles_path %>
-            <% end %>
-          <% else %>
-            <%= link_to "Start", new_user_session_path %>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>
@@ -108,4 +30,23 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+<div class="container-landing-test">
+  <div class="container-logo">
+    <%= render 'shared/start_logo' %>
+  </div>
+
+  <div class="bottom-landing">
+    <p > The news at your fingertips, <br>
+    served in pretzel sized portions </p>
+    <% if current_user %>
+      <% if current_user.interests.length < 1 %>
+        <%= link_to 'Start', new_user_interest_path %>
+      <%else%>
+        <%= link_to 'Start', articles_path %>
+      <% end %>
+    <% else %>
+      <%= link_to "Start", new_user_session_path %>
+    <% end %>
+  </div>
 </div>

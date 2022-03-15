@@ -51,7 +51,7 @@
 
 
 .list-button {
-  p { 
+  p {
     border: 2px;
     border-color: $pr-blue;
     border-style: solid;
@@ -59,23 +59,26 @@
     height: 60px;
     border-radius: 4px;
     text-align: center;
-    margin-top: 30px; 
+    margin-top: 30px;
     margin-bottom: 8px;
     background-color: $pr-blue;
-   
-   
+
+
     &:hover{
       background-color: $pr-yellow;
       border-color: $pr-yellow;
     }
      a{
        padding: 20px 10px 25px 10px;
-       overflow-wrap: break-word;
+      //  overflow-wrap: break-word;
        color: $pr-white;
        text-decoration: none;
+       display: flex;
+       justify-content: center;
+      //  text-align: center;
      }
   }
   a{
-    
+
   }
 }
