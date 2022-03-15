@@ -2,10 +2,12 @@
 <% @articles.each do |article| %>
   <% bookmark = Bookmark.find_by(list: @list, article: article)%>
   <%= render "shared/#{article.card_orientation}_card", article: article %>
-    <div><%= link_to "remove",
-                bookmark_path(bookmark),
-                method: :delete,
-                data: {confirm: "sure?"},
-                class: "remove-bookmark"%>
-      </div>
+    <div class = "remove-button">
+      <%= link_to "Remove",
+          bookmark_path(bookmark),
+          method: :delete,
+          data: {confirm: "sure?"},
+          class: "remove-bookmark"%>
+    </div>
+    <br>
 <% end %>

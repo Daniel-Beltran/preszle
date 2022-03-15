@@ -27,7 +27,7 @@ class UserInterestsController < ApplicationController
       List.create!(name: "History", user_id: current_user.id) 
       redirect_to articles_path
     else
-      render :new
+      redirect_to user_interests_path :new, notice: "Choose at least one interest"
     end
   end
 
@@ -45,7 +45,7 @@ class UserInterestsController < ApplicationController
     if current_user.interests.length.positive?
       redirect_to articles_path
     else
-      render :index
+      redirect_to my_interests_path, notice: "Choose at least one interest"
     end
   end
 end
