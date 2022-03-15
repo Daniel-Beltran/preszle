@@ -1,7 +1,7 @@
 # config/meta.yml
 
 meta_product_name: "Preszle"
-meta_title: "Preszle - The news at your fingertips, served in pretzel sized portions"
-meta_description: "Relevant description"
+meta_title: "Preszle - Only what you NEED to know"
+meta_description: "The news at your fingertips, served in pretzel sized portions."
 meta_image: "preszle_image.png"
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: "@preszle"
