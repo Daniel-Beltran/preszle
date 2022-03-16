@@ -1,8 +1,8 @@
 <%= render 'shared/navbar_show' %>
 <iframe src=<%= @article.source_url%> id="IFRAME_ID"></iframe>
-<%puts "hello"%>
-<%list = List.find_by(name: "History")%>
 
-<%if !list.articles.include? @article %> 
-  <%Bookmark.create!(article_id: @article.id, list_id: list.id)%>
+<%history_list = current_user.lists[0]%>
+
+<%if !history_list.articles.include? @article %>
+  <%Bookmark.create!(article_id: @article.id, list_id: history_list.id)%>
 <%end%>

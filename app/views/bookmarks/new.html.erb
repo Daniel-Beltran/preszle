@@ -1,10 +1,21 @@
 <%= render 'shared/navbar_back' %>
-<div class = "interest-form-container">
-<%if current_user.lists.length.positive?%>
-  <%= simple_form_for [@article, @bookmark] do |f| %>
-    <%= f.association :list, collection: current_user.lists, prompt: 'Choose one list', label: false%>
-    <%= f.submit "Add article to list", class: "interest-update-button" %>
-  <% end %>
+<div class = "bookmark-form-container">
+      <div class = "new-bookmark-list">
+        <h3 class = "subtitle2">Create a new list<h3>
+        <%= simple_form_for(@list, url: new_article_bookmark_path(@article), method: :post) do |f| %>
+          <div class = "inpu">
+            <div><%= f.input :name, placeholder: 'List name', label: false %></div>
+            <div><%= f.submit "+", class: "create-list" %></div>
+          </div>
+        <%end%> 
+    </div> 
+    <p>Or</p>
+    <%if current_user.lists.length.positive?%>
+    <%= simple_form_for [@article, @bookmark] do |f| %>
+      <%= f.association :list, collection: current_user.lists, prompt: 'Choose one list', label: false%>
+      <%= f.submit "Add article to list", class: "interest-update-button" %>
+    <% end %>
+    
 <%else%>
   <p>Please crate a list first</p>
   <%=simple_form_for @list do |f| %>
@@ -12,7 +23,6 @@
           <div><%= f.input :name, placeholder: 'List name', label: false %></div>
           <div><%= f.submit "+", class: "create-list" %></div>
         </div>  
-  <% end %>
-  <%#Bookmark.create!(article: @article, list:@list)%>      
+  <% end %>    
 <%end%>        
 </div>

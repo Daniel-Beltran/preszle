@@ -6,6 +6,21 @@
   }
 }
 
+.lists-container {
+  text-align: center;
+}
+
+.list-collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+}
+
 .new-list2{
   position: absolute;
   .inp {
