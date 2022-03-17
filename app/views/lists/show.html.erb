@@ -1,13 +1,14 @@
 <%= render 'shared/navbar_back' %>
 <% @articles.each do |article| %>
+<div class="list_remove">
   <% bookmark = Bookmark.find_by(list: @list, article: article)%>
   <%= render "shared/#{article.card_orientation}_card", article: article %>
-    <div class = "remove-button">
-      <%= link_to "Remove",
-          bookmark_path(bookmark),
-          method: :delete,
-          data: {confirm: "sure?"},
-          class: "remove-bookmark"%>
-    </div>
-    <br>
+  <div class = "btn btn-info mb-2">
+    <%= link_to "Remove",
+        bookmark_path(bookmark),
+        method: :delete,
+        data: {confirm: "sure?"},
+        class: "remove-bookmark"%>
+  </div>
+</div>
 <% end %>

@@ -85,3 +85,10 @@
 
   }
 }
+
+.list_remove {
+  border-bottom: 1px solid rgba(105, 152, 171, 0.2);
+  .article-card {
+    border-bottom: none;
+  }
+}
