@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.carousel-container {
+  position: relative;
+
+}
+
  .container-landing
  {
   position: relative;
@@ -9,12 +14,27 @@
   height: 100vh;
 }
 
+.container-landing-test
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  z-index: 100;
+}
+
 .container-logo{
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 20;
 }
 
 .bottom-landing{
@@ -23,6 +43,7 @@
   align-items: center;
   flex-direction: column;
   padding-bottom: 6vh;
+  z-index: 20;
 }
 
 .bottom-landing p{
@@ -31,9 +52,6 @@
   padding-right: 15px;
   padding-left: 15px;
   text-align:center;
-
-
-
 }
 
 .bottom-landing a{
@@ -56,19 +74,11 @@
   top: 0 ;
   left: 0;
   filter:brightness(70%);
-  // opacity: .9;
   background: linear-gradient(rgba(21, 50, 67, 0.2), rgba(21, 50, 67, 0.2));
-  // , url('image4.jpg');
-
-  // background-image: url(asset_path('image4.jpg'));
-
-
-  // overflow: hidden;
   vertical-align: middle;
   object-fit: fill;
   background-size: cover;
   box-shadow: 0 10px 15px rgba(0 , 0 , 0 , 0.1);
-  // justify-content: center;
   text-decoration: center;
   &:hover {
     text-decoration: none;

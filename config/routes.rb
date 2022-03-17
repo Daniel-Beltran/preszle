@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   post '/my_interests', to: 'user_interests#update', as: 'my_interests_update'
   post '/readtime', to: 'pages#readtime', as: 'readtime'
   get '/edit', to: 'articles#edit_card', as: 'edit_card'
+  post '/articles/:id/bookmarks/new', to: 'lists#create_on_bookmarks', as: 'new_list_on_bookmark'
+  
 end

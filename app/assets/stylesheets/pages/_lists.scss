@@ -1,0 +1,87 @@
+.new-list {
+  position: absolute;
+  bottom: 10px;
+  .inp {
+    display: flex;
+  }
+}
+
+.lists-container {
+  text-align: center;
+}
+
+.list-collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+}
+
+.new-list2{
+  position: absolute;
+  .inp {
+    display: flex;
+  }
+}
+
+.remove-edit{
+  margin-right: 6px;
+}
+
+.create-list{
+  width: 38px;
+  height: 38px;
+  background-color: $pr-yellow;
+  border-color: $pr-yellow;
+}
+
+.subtitle3 {
+  font-family: $body-font;//'Poppins', sans-serif;
+  text-align: center;
+  font-size: 13px;
+  // font-weight: normal;
+  color: $gray;
+  margin-top: 15px;
+}
+
+
+.list-button {
+  p {
+    border: 2px;
+    border-color: $pr-blue;
+    border-style: solid;
+    box-sizing: border-box;
+    width: 123px;
+    height: 89px;
+    border-radius: 3.2px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    background-color: $pr-blue;
+
+
+    &:hover{
+      background-color: $pr-yellow;
+      border-color: $pr-yellow;
+    }
+     a{
+       padding: 25px 10px 25px 10px;
+      //  overflow-wrap: break-word;
+       color: $pr-white;
+       text-decoration: none;
+       display: flex;
+       justify-content: center;
+      //  text-align: center;
+      font-weight: 400;
+      font-size: 19px;
+      //line-height: 22px;
+     }
+  }
+  a{
+
+  }
+}
