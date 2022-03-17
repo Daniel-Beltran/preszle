@@ -8,20 +8,20 @@
         <%if list.name == "History"%>
           <div class= "list-button">
             <p><%= link_to list.name, list_path(list) %></p>
-          </div>  
+          </div>
         <%else%>
           <div class= "list-button">
-            <p><%= link_to list.name, list_path(list) %></p> 
+            <p><%= link_to list.name, list_path(list) %></p>
             <div class = "remove-edit">
               <%= link_to "remove /",
                 list_path(list),
                 method: :delete,
                 data: {confirm: "sure?"} %>
-              <%= link_to "edit", edit_list_path(list) %>   
-            </div>     
+              <%= link_to "edit", edit_list_path(list) %>
+            </div>
           </div>
-        <%end%>             
-      <%end%> 
+        <%end%>
+      <%end%>
     </div>
     <div class = "new-list">
       <h3 class = "subtitle2">Create a new list<h3>
@@ -29,9 +29,7 @@
         <div class = "inp">
         <div><%= f.input :name, placeholder: 'List name', label: false %></div>
         <div><%= f.submit "+", class: "create-list" %></div>
-      <% end %> 
+      <% end %>
     </div>
-  </div> 
+  </div>
 </div>
-
- 
