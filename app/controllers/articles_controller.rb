@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def index
     @news = []
 
-    Article.all.each do |n|
+    Article.all.order(:date_published).each do |n|
       (0...current_user.interests.count).each do |i|
         if n.interest_id == current_user.interests[i].id
           if n.reading_time <= current_user.readtime
