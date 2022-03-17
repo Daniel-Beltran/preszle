@@ -40,6 +40,7 @@
     <p > The news at your fingertips, <br>
     served in pretzel sized portions </p>
     <% if current_user %>
+    <%raise%>
       <% if current_user.interests.length < 1 %>
         <%= link_to 'Start', new_user_interest_path %>
       <%else%>
