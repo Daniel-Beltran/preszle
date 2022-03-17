@@ -1,7 +1,21 @@
 .dashboard-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 317px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  //background-color: rgb(238, 238, 238);
+  //border: solid;
+}
+
+.dashboard-buttons{
+  position: relative;
+  top: 20px;
   display: flex;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 300px;
-  padding-bottom: 10px;
+  justify-content: space-between;
+  flex-flow: column;
+  height: 400px;
+  width: 300px;
 }
