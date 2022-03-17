@@ -27,9 +27,11 @@ class ListsController < ApplicationController
 
   def create_on_bookmarks
     @list = List.new(list_params)
+    @article = Article.find(params[:id])
     current_user.lists << @list
     if @list.save
-      redirect_to new_article_bookmark_path(params[:id])
+      @list.articles << @article
+      redirect_to article_path(params[:id])
     else 
       redirect_to new_article_bookmark_path(params[:id]), notice: "Invalid name"
    end  
