@@ -52,7 +52,7 @@ Interest.all.each do |n|
         Article.create! title: a.title, description: a.description, source_url: a.url, image: a.urlToImage,
                                   source: a.name, interest_id: n.id, date_published: a.publishedAt,
 
-                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 280.to_f.ceil(0) + 1
+                                  reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 80.to_f.ceil(0) + 1
       end
     puts "#{n.name} created with #{articles.length} articles"
     end
