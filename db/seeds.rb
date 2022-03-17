@@ -36,17 +36,6 @@ puts 'creating interests'
 interests = ["Business", "Cars", "Celebrities", "Design", "Food", "Gaming", "Lifestyle", "Movies", "Music", "News", "Photography", "Politics", "Technology", "Travel", "Science", "Sports"]
 interests.each { |interest| Interest.create!(name:interest)}
 
-puts 'creating lists'
-
-lists = ["Metro reading", "Impress the boss", "Toilet brake"]
-User.all.each do |user|
-  lists.each do |list|
-    List.create!(name: list,
-                user_id: user.id)
-  end
-end
-
-
 puts 'creating User_Interest'
 
 (0...10).each do
@@ -58,10 +47,10 @@ puts 'Fetching articles from the API'
 
 Interest.all.each do |n|
   news = News.new(ENV["NEWS_API"])
-    articles = news.get_everything(q: n.name, searchIn: "description", from: "#{(DateTime.now - 27.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "popularity", sources: "reuters, wired, atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press", pageSize: 100)
+    articles = news.get_everything(q: n.name, searchIn: "description", from: "#{(DateTime.now - 27.days).strftime("%Y-%m-%d")}&to=#{DateTime.current}", sortBy: "publishedAt", sources: "atlantic, ABC News, Bleacher Report, Breitbart News, newsweek, Next Big Future, National Geographic, talksport, The Wall Street Journal, MTV News, techradar, The Hindu, NBC News, Entertainment Weekly, New York Magazine, Crypto Coins News, FourFourTwo, Associated Press, reuters, wired", pageSize: 100)
     articles.each do |a|
         Article.create! title: a.title, description: a.description, source_url: a.url, image: a.urlToImage,
-                                  source: a.name, interest_id: n.id,
+                                  source: a.name, interest_id: n.id, date_published: a.publishedAt,
 
                                   reading_time: ((a.content[/\+(.*?)c/, 1].to_i + a.content.size) / 7) / 280.to_f.ceil(0) + 1
       end

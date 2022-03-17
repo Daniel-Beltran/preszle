@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root to: 'pages#home', as: :unauthenticated_route
   end
   authenticated :user do
-    root to: 'user_interests#new', as: :authenticated_route
+    root to: 'articles#index', as: :authenticated_route
   end
   resources :articles, only: %i[index show update] do
     resources :bookmarks, only: %i[new create]
@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   post '/readtime', to: 'pages#readtime', as: 'readtime'
   get '/edit', to: 'articles#edit_card', as: 'edit_card'
   post '/articles/:id/bookmarks/new', to: 'lists#create_on_bookmarks', as: 'new_list_on_bookmark'
-  
+
 end
