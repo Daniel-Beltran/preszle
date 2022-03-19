@@ -40,10 +40,9 @@
 }
 
 .subtitle3 {
-  font-family: $body-font;//'Poppins', sans-serif;
+  font-family: $body-font;
   text-align: center;
   font-size: 13px;
-  // font-weight: normal;
   color: $gray;
   margin-top: 15px;
 }
@@ -70,19 +69,13 @@
     }
      a{
        padding: 25px 10px 25px 10px;
-      //  overflow-wrap: break-word;
        color: $pr-white;
        text-decoration: none;
        display: flex;
        justify-content: center;
-      //  text-align: center;
       font-weight: 400;
       font-size: 19px;
-      //line-height: 22px;
      }
-  }
-  a{
-
   }
 }
 
